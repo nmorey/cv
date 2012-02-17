@@ -1,5 +1,8 @@
 #!/usr/bin/ruby
 # -*- coding: utf-8 -*-
+require 'rubygems'
+require 'htmlentities'
+
 module CV
     def stringToTeX(str)
         return str.gsub(/!BR!/, "\\newline{}").gsub(/!B!.*!B!/) { |n|
@@ -10,8 +13,18 @@ module CV
     end
     module_function :stringToTeX
     def stringToBasicHTML(str)
-        str.gsub(/é/, "&eacute;")
+        coder = HTMLEntities.new
+        return coder.encode(str, :named)
     end
+    module_function :stringToBasicHTML
+    def HTMLputs(file, str)
+        str = str.gsub(/!BR!/, "<br />").gsub(/é/, "&eacute;").gsub(/è/, "&egrave;").gsub(/à/, "&agrave;").gsub(/!B!.*!B!/) { |n|
+            "<b>" + n.gsub(/!B!/, "") +"</b>"
+            }
+        file.puts str
+    end
+    module_function :HTMLputs
+
     class Top
         attr_accessor :firstName, :lastName, :title, :address, :city,
         :mobile, :email, :homepage, :extras, :professional, :degrees,
@@ -55,26 +68,33 @@ module CV
         end
         def toHTML(filename)
             file = File.open(filename, "w")
-            file.puts "
+            CV::HTMLputs(file, "
 <body>
-<table><tr>
-<td>
+<table width='100\%'><tr>
+<td width='60\%'>
  <span class='cv-name'>#{@firstName} #{lastName}</span><br />
- <span class='cv-title'>#{@title}</span>
+ <span class='cv-title'><i>#{@title}</i></span>
 </td>
-<td>"
-            file.puts "<span class='cv-coord'>#{@address}</span><br />" if @address != nil
-            file.puts "<span class='cv-coord'>#{@city}</span><br />" if @city != nil
-            file.puts "<span class='cv-coord'>#{@mobile}</span><br />" if @mobile != nil
-            file.puts "<span class='cv-coord'>#{@email.gsub(/\./, " DOT ").gsub(/@/, " AT ")}</span><br />" if @email != nil
-            file.puts "<span class='cv-coord'><a href='http://#{@homepage}'>#{@homepage}</a></span><br />" if @homepage != nil
+<td>")
+
+            CV::HTMLputs(file, "<span class='cv-coord'>#{@address}</span><br />") if @address != nil
+            CV::HTMLputs(file, "<span class='cv-coord'>#{@city}</span><br />") if @city != nil
+            CV::HTMLputs(file, "<span class='cv-coord'>#{@mobile}</span><br />") if @mobile != nil
+            if @email != nil
+                CV::HTMLputs(file, "<span class='cv-coord'>#{@email.gsub(/\./, " DOT ").gsub(/@/, " AT ")}</span><br />")
+            end
+            if @homepage != nil
+                CV::HTMLputs(file, "<span class='cv-coord'><a href='http://#{@homepage}'>#{@homepage}</a></span><br />") 
+            end
             @extras.each() {|extra|
-                file.puts "<span class='cv-coord'>#{extra}</span><br />"
+                CV::HTMLputs(file, "<span class='cv-coord'>#{extra}</span><br />")
             }
-file.puts"</td>
-</tr>
-</table>
-</body>"
+            CV::HTMLputs(file,"</td>\n</tr>\n</table><table width='100%'>")
+
+             @professional.each() {|prof|
+                prof.toHTML(file)
+            }
+            CV::HTMLputs(file,"</table></body>")
             file.close()
         end
     end
@@ -95,6 +115,15 @@ file.puts"</td>
                 file.puts "\\end{itemize}"
             end
             file.puts "}"
+        end
+        def toHTML(file)
+            CV::HTMLputs(file, "<tr><td>#{@date}</td><td><b>#{@title}</b>, <i>#{@company}</i>, #{@city}")
+            CV::HTMLputs(file, ", #{@country}") if @country != nil
+            CV::HTMLputs(file, ".<br />")
+            @details.each() {|detail|
+                CV::HTMLputs(file, "<li>#{detail}<br />")
+            }
+                CV::HTMLputs(file, "</td></tr>")
         end
     end
 end
