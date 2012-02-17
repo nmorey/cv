@@ -10,7 +10,7 @@ module CV
     end
     module_function :stringToTeX
     def stringToBasicHTML(str)
-        str.gsub(/é/, "&eacute;"
+        str.gsub(/é/, "&eacute;")
     end
     class Top
         attr_accessor :firstName, :lastName, :title, :address, :city,
