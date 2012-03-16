@@ -84,7 +84,7 @@ entry.date="August 2003"
 entry.title="Intern"
 entry.company="Xyalis"
 entry.city="Grenoble"
-entry.details << "Development of \textbf {non-regression tools!B! for Xyalis complete software suite."
+entry.details << "Development of !B!non-regression tools!B! for Xyalis complete software suite."
 entry.details << "Environment: Bash, Tcl, Tk."
 cv.professional << entry
 
