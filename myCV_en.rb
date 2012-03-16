@@ -269,7 +269,8 @@ cv.header= "
 <td class='header-cell'><a href='/Virt-K.pdf'>Virt-K: Hard Real Time Kernel for the Cell Broadband Engine</a></td></tr></table>"
 cv.middleStuff="
                 <a href=\"download.php?mirror=uk&id=cv-anglais.pdf\"> CV PDF in English </a><br>
-                <a href=\"download.php?mirror=uk&id=cv.pdf\"> CV PDF in French</a><br>
+                <a href=\"download.php?mirror=uk&id=cv.pdf\"> CV PDF in French</a><br><br>
+                <a href=\"piwigo/\">Take a look at my pictures from hikes and holidays!!</a><br>
 "
 cv.footer = "
 <script type=\"text/javascript\">
