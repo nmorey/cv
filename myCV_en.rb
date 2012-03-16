@@ -2,11 +2,11 @@
 require 'cv'
 
 cv = CV::Top.new()    
-cv.language = :fr
+cv.language = :en
 
 cv.firstName="Nicolas"
 cv.lastName="Morey-Chaisemartin"
-cv.title="Architecte logiciel embarqué - Développeur!BR!Front-End et Système d'exploitation"
+cv.title="Embedded Software Architect -!BR! Front-End and Operating System Developper"
 cv.address="8 Rue Tristan Corbière"
 cv.city="38400 Saint Martin d'Hères"
 cv.mobile="+33 6 42 46 68 87"
@@ -18,85 +18,85 @@ cv.extras << "29/06/1986"
 # Exp Pro
 #############
 entry = CV::Entry.new()
-entry.date="Juillet 2009!BR!à Aujourd'hui"
-entry.title="Architecte et développeur logiciel embarqué"
+entry.date="July 2009!BR!upto Today"
+entry.title="Embedded software architect and developper"
 entry.company="Kalray"
 entry.city="Montbonnot"
-entry.details << "Développement de système d'exploitation et de librairies runtime pour l'embarqué."
-entry.details << "Développement d'un !B!compilateur!B! front-end pour un langage de Streaming hautement parallèle."
-entry.details << "Responsable de l'!B!intégration continue!B! sous Git/Hudson."
-entry.details << "Co-Administrateur IT."
-entry.details << "Environnement; !B!Systèmes embarqués!B!, MPPA, C, Assembleur, Ruby, Programation parallèle." 
+entry.details << "Development of an embedded operating system and runtime library."
+entry.details << "Development of a front-end !B!compiler!B! for a highly parallel streaming language."
+entry.details << "In charge of !B!continuous integration!B! using Git/Hudson."
+entry.details << "IT Co-administrator ."
+entry.details << "Environment: !B!Embedded systems!B!, MPPA, C, Assembly, Ruby, Parallel programming."
 cv.professional << entry
 
 entry = CV::Entry.new()
-entry.date="Octobre 2008!BR!à Juillet 2009"
-entry.title="Ingénieur en Systèmes embarqués"
+entry.date="Octobre 2008!BR!upto July 2009"
+entry.title="Embedded System Engineer"
 entry.company="Coframi"
 entry.city="Meylan"
-entry.details << "Mission chez Bull dans l'équipe R\&D HPC: Expert !B!Infiniband!B!."
-entry.details << "Développement d'!B!algorithmes de routage!B! fault-tolerant(dépot de brevets)."
-entry.details << "Mise en place de solution de monitoring réseau pour grand clusters."
-entry.details << "Environnement: Infiniband, Routage, QoS, !B!Drivers Linux!B!, !B!HPC!B!."
+entry.details << "Consulting for Bull in the R\&D HPC Team: !B!Infiniband!B! expert."
+entry.details << "Development of fault-tolerant !B!routing algorithms!B! (patents pending)."
+entry.details << "Development of network monitoring solutions for large clusters.."
+entry.details << "Environment: Infiniband, Routage, QoS, !B!Linux drivers!B!, !B!HPC!B!."
 cv.professional << entry
 
 entry = CV::Entry.new()
-entry.date="Mai 2008!BR!à Septembre 2008"
-entry.title="Projet de fin d'études et de Master"
+entry.date="May 2008!BR!upto Septembre 2008"
+entry.title="MSc Project"
 entry.company="Northumbria University"
 entry.city="Newcastle"
 entry.country="UK"
-entry.details << "Design et implémentation d'un !B!OS temps-réel!B! pour le Cell Broadband Engine."
-entry.details << "Environnement: !B!Multicore!B!, Temps-réel, !B!Scheduling!B!, Synchronisation, C, Assembleur."
+entry.details << "Design and development of a !B!hard real-time micro-Kernel!B! for the Cell Broadband Engine."
+entry.details << "Environment: !B!Multicore!B!, Real-Time, !B!Scheduling!B!, Synchronisation, C, Assembly."
 cv.professional << entry
 
 entry = CV::Entry.new()
-entry.date="Juin 2007!BR!à Aôut 2007"
-entry.title="Stagiaire IT"
+entry.date="June 2007!BR!upto August 2007"
+entry.title="IT Intern"
 entry.company="Allibert-Trekking"
 entry.city="Montmélian"
-entry.details << "Support utilisateur et serveur sur un réseau Max OS X."
-entry.details << "Mise en place d'un !B!système de monitoring!B!."
-entry.details << "Développement d'outils de synchronisation entres les outils d'inventaire, de monitoring et d'administration."
-entry.details << "Environnement: Mac OS X, Php, Perl, Python, Bash, MySQL, openDirectory."
+entry.details << "User and server support on a Mac OS X infrastructure."
+entry.details << "Deployment of !B!monitoring tools!B!."
+entry.details << "Development of synchronisation tools between inventory, administration and monitoring tools."
+entry.details << "Environment: Mac OS X, Php, Perl, Python, Bash, MySQL, openDirectory."
 cv.professional << entry
 
 entry = CV::Entry.new()
-entry.date="Janvier 2007"
-entry.title="Intervenant Junior-Entreprise"
+entry.date="January 2007"
+entry.title="Junior-Entreprise Consultant"
 entry.company="MVA Limited"
 entry.city="Grenoble"
-entry.details << "Création d'un outil d'extraction de coordonnées GPS depuis Google Maps."
-entry.details << "Environnement: !B!Java!B!, Swing."
+entry.details << "Development of a GPS coordinate extraction tools using Google Maps."
+entry.details << "Environment: !B!Java!B!, Swing."
 cv.professional << entry
 
 entry = CV::Entry.new()
 entry.date="Octobre 2006"
-entry.title="Intervenant Junior-Entreprise"
+entry.title="Junior-Entreprise Consultant"
 entry.company="Institut Laue-Langevin"
 entry.city="Grenoble"
-entry.details << "Portage d'une application de démonstration de cristallographie d'objective-C vers Java."
-entry.details << "Environnement: Java, Swing, HTML."
+entry.details << "Porting of an objective-C crystallography demonstration application to Java."
+entry.details << "Environment: Java, Swing, HTML."
 cv.professional << entry
 
 entry = CV::Entry.new()
-entry.date="Aôut 2003"
-entry.title="Stagiaire"
+entry.date="August 2003"
+entry.title="Intern"
 entry.company="Xyalis"
 entry.city="Grenoble"
-entry.details << "Réalisation d'un !B!programme de non régression!B! pour toute la gamme des outils Xyalis."
-entry.details << "Environnement: Bash, Tcl, Tk."
+entry.details << "Development of \textbf {non-regression tools!B! for Xyalis complete software suite."
+entry.details << "Environment: Bash, Tcl, Tk."
 cv.professional << entry
 
 entry = CV::Entry.new()
-entry.date="Juillet 2001"
-entry.title="Stagiaire"
+entry.date="July 2001"
+entry.title="Intern"
 entry.company="Xyalis"
 entry.city="Grenoble"
-entry.details << "Développement de scripts de démonstrations d'outils de CAO."
-entry.details << "Intégration d'outils dans une même GUI."
-entry.details << "Démonstration des logiciels de l'entreprise à un salon internation de micro-électronique aux USA (DAC)."
-entry.details << "Environnement: Tcl, Tk."
+entry.details << "Development of demonstration scripts for CAO tools."
+entry.details << "GUI integration of several tools."
+entry.details << "Live demonstration at an international micro-electronic exhibition in the USA.(DAC)."
+entry.details << "Environment: Tcl, Tk."
 cv.professional << entry
 
 #############
@@ -104,66 +104,64 @@ cv.professional << entry
 #############
 entry = CV::Entry.new()
 entry.date="2010"
-entry.title="Ingénieur en informatique"
+entry.title="Computing Science Engineer"
 entry.company="ENSIMAG"
 entry.city="Grenoble"
 cv.degrees << entry
 
 entry = CV::Entry.new()
 entry.date="2010"
-entry.title="Master en Systèmes Embarqués"
-entry.company="Université de Northumbria"
+entry.title="MSc in Embedded systems"
+entry.company="Northumbria University"
 entry.city="Newcastle"
 entry.country="UK"
-entry.details << "En parallèle de la dernière année à l'ENSIMAG."
-entry.details << "Année réalisée à Newcastle - Angleterre."
+entry.details << "In parallel of the third year at ENSIMAG.."
 cv.degrees << entry
 
 #############
 # Exp Perso
 #############
 entry = CV::Entry.new()
-entry.date="2008!BR!à Aujourd'hui"
-entry.title="Participation à des projets Open Source"
-entry.details << "Participations au mailing list et au développement de !B!Linux!B!, !B!Git!B!, OpenSM."
-entry.details << "Participations ponctuelles sur divers projets: Sick-Beard, RBTools, libdbi..."
+entry.date="2008!BR!upto Today"
+entry.title="Contributions to Open Source projects"
+entry.details << "Contribution to mailing list and development of !B!Linux!B!, !B!Git!B!, OpenSM."
+
+entry.details << "Occasional involvement in various projects: Sick-Beard, RBTools, libdbi..."
 cv.personal << entry
 
 entry = CV::Entry.new()
-entry.date="2011!BR!à Aujourd'hui"
+entry.date="2011!BR!upto Today"
 entry.title="Damage (DAtabase MetA GEnerator)"
-entry.details << "Développement d'un ensemble de script de génération de formats intermédiaires."
-entry.details << "Permet à partir d'une description YAML, de générer toutes les méthodes de!BR!"+
-    " lecture/écriture/modification vers des formats XML/YAML/binaire depuis du C, Java ou Ruby."
+entry.details << "Development of a script toolset for custom database generation."
+entry.details << "Generates a complete access and modification API for C, Java, Ruby to XML/YAML/Binary databases from a simple YAML description."
 entry.details << "Environnement: Ruby, GPL."
 cv.personal << entry
 
 entry = CV::Entry.new()
 entry.date="2006"
-entry.title="Participation au concours IBM sur le Cell Broadband Engine"
-entry.details << "Développement d'un framework open-source pour les algorithmes de type"+
-    " !I!producteur/consommateur!I! sur un cluster de Cell."
-entry.details << "Environnement: C++, sockets."
+entry.title="Participation to  IBM Cell B.E. Contest"
+entry.details << "Development of a generic Open Source !I!producer/consumer!I! framework for Cell clusters."
+entry.details << "Environment: C++, sockets."
 cv.personal << entry
 
 entry = CV::Entry.new()
-entry.date="2005!BR!à 2007"
-entry.title="Responsable informatique N'Sigma, Junior Entreprise de l'ENSIMAG"
-entry.details << "Administration d'un réseau mixte Linux/Windows."
-entry.details << "Participation au chiffrage des contrats N'Sigma."
+entry.date="2005!BR!upto 2007"
+entry.title="IT Administrator of N'Sigma, ENSIMAG Junior-Entreprise"
+entry.details << "Administration of a mixed Linux/Windows network."
+entry.details << "Participation to cost assessments of N'Sigma contracts."
 cv.personal << entry
 
 entry = CV::Entry.new()
 entry.date="2005"
-entry.title="Réalisation d'un micro-processeur"
-entry.details << "Développement en VHDL d'un micro-processeur 8bits avec carte vidéo sur FPGA."
+entry.title="Development of a micro-controller"
+entry.details << "Development and debug of an 8bit micro-controller with VGA output on a FPGA."
 cv.personal << entry
 
 entry = CV::Entry.new()
 entry.date="2004"
-entry.title="Concours national de programmation Prologin"
-entry.details << "Développement d'une IA pour un jeu de stratégie."
-entry.details << "Classé !B!5ème!B!."
+entry.title="National programming contest Prologin"
+entry.details << "Development of an AI for a strategy game."
+entry.details << "Ranked !B!5th!B!."
 cv.personal << entry
 
 #############
@@ -171,86 +169,91 @@ cv.personal << entry
 #############
 infoSkills=[]
 skill = CV::Skill.new()
-skill.type = "Langages"
+skill.type = "Languages"
 skill.content= "!B!C!B!, !B!Ruby!B!, Java, Assembleur, Ada, Php, C++"
 infoSkills << skill
 
 skill = CV::Skill.new()
-skill.type = "Outils de dévelopmment"
+skill.type = "Development tools"
 skill.content= "Emacs, Netbeans, SQLDevelopper, Eclipse"
 infoSkills << skill
 
 skill = CV::Skill.new()
-skill.type="Systèmes d'exploitation"
+skill.type="Operating Systems"
 skill.content="!B!Kernel!B!, !B!Scheduling!B!, Programmation concurrentielle, !B!Drivers!B!, Signaux"
 infoSkills << skill
 
 skill = CV::Skill.new()
-skill.type="Gestionnaires de versions"
+skill.type="Version control"
 skill.content="!B!Git!B!, !B!Gitolite!B!, !B!Hudson!B!, CVS, SVN, SCCS"
 infoSkills << skill
 
 skill = CV::Skill.new()
-skill.type="Administration"
+skill.type="System Administration"
 skill.content="!B!Linux!B!, FreeBSD, Samba, Postfix, Apache, Shell scripting (Bash, Sed, Awk)"
 infoSkills << skill
 
 skill = CV::Skill.new()
-skill.type="Réseau"
+skill.type="Networking"
 skill.content="Routage, Firewall, TCP/IP, Ethernet, !B!Sockets!B!, QoS, !B!Infiniband!B!"
 infoSkills << skill
 
 skill = CV::Skill.new()
-skill.type="Environnements graphiques"
+skill.type="Graphical Environment"
 skill.content="!B!X11!B!, Gtk, Tk, Swing"
 infoSkills << skill
 
 skill = CV::Skill.new()
-skill.type="Bases de données"
+skill.type="Databases"
 skill.content="!B!Conception!B!, Optimisation, !B!SQL!B!, Oracle, MySQL, LDAP"
 infoSkills << skill
 
 skill = CV::Skill.new()
-skill.type="Conception Logicielle"
+skill.type="Software Design"
 skill.content="!B!UML!B!"
 infoSkills << skill
 
 skill = CV::Skill.new()
-skill.type="Conception Electronique"
+skill.type="Hardware Design"
 skill.content="!B!VHDL!B!, Modelsim"
 infoSkills << skill
 
 skill = CV::Skill.new()
-skill.type="Outils mathématiques"
+skill.type="Mathematic Tools"
 skill.content="Matlab, CoinOR, GPLK"
 infoSkills << skill
 
-cv.skills["Informatique"] = infoSkills
+cv.skills["Computer"] = infoSkills
 
 #############
 # Lang
 #############
 lang= CV::Language.new()
-lang.lang = "Anglais"
-lang.level = "lu, parlé, écrit"
-lang.more = "Score au TOEFL:100/120 - TOEIC: 935/990"
+lang.lang = "French"
+lang.level = "Native speaker"
 cv.languages << lang
 
 lang= CV::Language.new()
-lang.lang = "Allemand"
-lang.level = "Notions"
+lang.lang = "English"
+lang.level = "Bilingual"
+lang.more = "TOEFL Score:100/120"
+cv.languages << lang
+
+lang= CV::Language.new()
+lang.lang = "German"
+lang.level = "School level"
 cv.languages << lang
 #############
 # Other
 #############
 ot = CV::Other.new()
-ot.cat="Loisirs"
-ot.more = "Randonnée à pied et à ski, photographie, lecture, cinéma, voyages."
+ot.cat="Hobbies"
+ot.more = "Hiking, skiing, travelling, photography, books and movies."
 cv.other << ot
 
 ot = CV::Other.new()
 ot.cat="Sport"
-ot.more = "Ancien pilote deltaplance, membre de l'équipe de France Espoir."
+ot.more = "Former hang-glider pilot, member of the French Youth National team."
 cv.other << ot
 
 ###############
@@ -261,12 +264,12 @@ cv.header= "
 <td class='header-cell'><a href=' index_fr.html'><img src='fr_flag.jpg' height='30' width='50' alt='FR'></a></td>
 <td class='header-cell'><a href='index_en.html'><img  src='uk_flag.jpg' height='30' width='50' alt='EN'></a></td>
 <td class='header-cell'><a href='/piwigo/'>Photos</a></td>
-<td class='header-cell'><a href='https://github.com/nmorey/'>Mon GitHub</a></td>
+<td class='header-cell'><a href='https://github.com/nmorey/'>My GitHub Stuff</a></td>
 <td class='header-cell'><a href='/cellreport.pdf'>Cell Broadband Engine</a></td>
-<td class='header-cell'><a href='/Virt-K.pdf'>Virt-K: Kernel Temps Réel pour le Cell Broadband Engine</a></td></tr></table></p>"
+<td class='header-cell'><a href='/Virt-K.pdf'>Virt-K: Hard Real Time Kernel for the Cell Broadband Engine</a></td></tr></table></p>"
 cv.middleStuff="
-                <a href=\"cv.pdf\"> CV PDF en Francais</a><br>
-                <a href=\"cv-anglais.pdf\"> CV PDF en Anglais </a><br>
+                <a href=\"cv-anglais.pdf\"> CV PDF in English </a><br>
+                <a href=\"cv.pdf\"> CV PDF in French</a><br>
 "
 cv.footer = "
 <script type=\"text/javascript\">
@@ -404,6 +407,6 @@ cv.footer = "
 # THE END
 #############
 
-cv.toTeX('_cv.tex')
-cv.toHTML('index_fr.html')
+cv.toTeX('_cv_anglais.tex')
+cv.toHTML('index.html')
 

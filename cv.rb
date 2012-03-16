@@ -13,10 +13,10 @@ module CV
 
     def stringToTeX(str)
         return nil if str == nil
-        return str.gsub(/!BR!/, "\\newline{}").gsub(/!B!.*!B!/) { |n|
+        return str.gsub(/!BR!/, "\\\\\\").gsub(/!B!.*!B!/) { |n|
             "\\textbf{" + n.gsub(/!B!/, "") +"}"
             }.gsub(/!I!(.*)!I!/) { |n|
-            "$" + n.gsub(/!I!/, "") +"}"
+            "$" + n.gsub(/!I!/, "") +"$"
             }
     end
     module_function :stringToTeX
@@ -61,7 +61,7 @@ module CV
 "
             file.puts "\\firstname{#{@firstName}}" if @firstName != nil
             file.puts "\\familyname{#{@lastName}}" if @lastName != nil
-            file.puts "\\title{#{CV::stringToTeX(@title)}}" if @title != nil
+            file.puts "\\title{#{CV::stringToTeX(@title).gsub('\\\\', ' ')}}" if @title != nil
             file.puts "\\address{#{@address}}{#{@city}}" if @address != nil || @city != nil
             file.puts "\\mobile{#{@mobile}}" if @mobile != nil
             file.puts "\\email{#{@email}}" if @email != nil
@@ -302,7 +302,7 @@ module CV
         def initialize()
         end
         def toTeX(file)
-            file.puts "{#{type}{#{CV::stringToTeX(@content)}}"
+            file.puts "{#{type}}{#{CV::stringToTeX(@content)}}"
         end
         def toHTML(file)
             CV::HTMLputs(file, "<td class='skill-name'>#{@type}</td><td>#{@content}</td>")
