@@ -4,7 +4,15 @@ require 'rubygems'
 require 'htmlentities'
 
 module CV
+    PROF_EXP={:en => "Work Experience", :fr => "Expérience Professionelle"}
+    DEGREES ={:en=> "Education", :fr=>"Diplômes et Études"}
+    PERSONAL ={:en=> "Personal Experience", :fr=>"Expérience Personnelle"}
+    SKILLS ={:en=> "Skills", :fr=>"Compétences"}
+    OTHERS ={:en=> "Others", :fr=>"Divers"}
+    LANGUAGES ={:en=> "Languages", :fr=>"Langages"}
+
     def stringToTeX(str)
+        return nil if str == nil
         return str.gsub(/!BR!/, "\\newline{}").gsub(/!B!.*!B!/) { |n|
             "\\textbf{" + n.gsub(/!B!/, "") +"}"
             }.gsub(/!I!(.*)!I!/) { |n|
@@ -13,6 +21,7 @@ module CV
     end
     module_function :stringToTeX
     def stringToBasicHTML(str)
+        return nil if str == nil
         coder = HTMLEntities.new
         return coder.encode(str, :named)
     end
@@ -20,6 +29,8 @@ module CV
     def HTMLputs(file, str)
         str = str.gsub(/!BR!/, "<br />").gsub(/é/, "&eacute;").gsub(/è/, "&egrave;").gsub(/à/, "&agrave;").gsub(/!B!.*!B!/) { |n|
             "<b>" + n.gsub(/!B!/, "") +"</b>"
+            }.gsub(/!I!(.*)!I!/) { |n|
+            "<i>" + n.gsub(/!I!/, "") +"</i>"
             }
         file.puts str
     end
@@ -28,14 +39,17 @@ module CV
     class Top
         attr_accessor :firstName, :lastName, :title, :address, :city,
         :mobile, :email, :homepage, :extras, :professional, :degrees,
-        :personnal, :skills, :other
+        :personal, :skills, :languages,:other, :language, :pagetitle,
+        :header, :footer, :middleStuff
         def initialize()
             @extras=[]
             @professional=[]
             @degrees=[]
-            @personnal=[]
-            @skills=[]
+            @personal=[]
+            @skills={}
             @other=[]
+            @language = :fr
+            @languages=[]
         end
         def toTeX(filename)
             file = File.open(filename, "w")
@@ -47,7 +61,7 @@ module CV
 "
             file.puts "\\firstname{#{@firstName}}" if @firstName != nil
             file.puts "\\familyname{#{@lastName}}" if @lastName != nil
-            file.puts "\\title{#{@title}}" if @title != nil
+            file.puts "\\title{#{CV::stringToTeX(@title)}}" if @title != nil
             file.puts "\\address{#{@address}}{#{@city}}" if @address != nil || @city != nil
             file.puts "\\mobile{#{@mobile}}" if @mobile != nil
             file.puts "\\email{#{@email}}" if @email != nil
@@ -59,21 +73,66 @@ module CV
             file.puts "
 \\begin{document}
 \\maketitle"
-            file.puts "\\section{Expérience professionelle}" if @professional.length != 0
+            file.puts "\\section{#{CV::PROF_EXP[@language]}}" if @professional.length != 0
             @professional.each() {|prof|
                 prof.toTeX(file)
+            }
+
+            file.puts "\\section{#{CV::DEGREES[@language]}}" if @degrees.length != 0
+            @degrees.each() {|prof|
+                prof.toTeX(file)
+            }
+
+            file.puts "\\section{#{CV::PERSONAL[@language]}}" if @personal.length != 0
+            @personal.each() {|prof|
+                prof.toTeX(file)
+            }
+
+            file.puts "\\section{#{CV::SKILLS[@language]}}" if @skills.length != 0  ||
+                @languages.length != 0
+            @skills.each() {|skill_type, skill_list|
+                file.puts "\\subsection{#{@skill_type}}"
+                inLine = 0
+                skill_list.each(){|skill|
+                    CV::HTMLputs(file, "\\cvcomputer") if inLine == 0
+                    skill.toTeX(file)
+                    inLine += 1
+                    inLine = 0 if inLine == 2
+                }
+                file.puts "{}{}" if inLine != 0
+            }
+            file.puts "\\subsection{#{CV::LANGUAGES[@language]}}" if @languages.length != 0
+            @languages.each(){|lang|
+                lang.toTeX(file)
+            }
+
+            file.puts "\\section{#{CV::OTHERS[@language]}}" if @other.length != 0
+            @other.each(){|ot|
+                ot.toTeX(file)
             }
             file.puts "\\end{document}"
             file.close()
         end
+
+
+
         def toHTML(filename)
             file = File.open(filename, "w")
             CV::HTMLputs(file, "
+<html>
+<head><title>#{@firstName} #{@lastName}</title>
+<meta name='description' content=\"#{@firstName} #{@lastName}'s Web Page\" >
+<meta name='keywords' content='#{@firstName}, @{lastName}, CV, #{@keywords}' >
+<meta name='robots' content='all'>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+<link rel='stylesheet' type='text/css' href='cv.css'> 
+</head>
 <body>
+#{@header}
 <table width='100\%'><tr>
-<td width='60\%'>
- <span class='cv-name'>#{@firstName} #{lastName}</span><br />
- <span class='cv-title'><i>#{@title}</i></span>
+<td><img src='cv-pic.jpg' alt='MyPicture' height='300' ></td><td >
+ <span class='cv-name'>#{@firstName} #{lastName}</span><br /><br />
+ <span class='cv-title'>#{@title}</span>
 </td>
 <td>")
 
@@ -89,24 +148,132 @@ module CV
             @extras.each() {|extra|
                 CV::HTMLputs(file, "<span class='cv-coord'>#{extra}</span><br />")
             }
-            CV::HTMLputs(file,"</td>\n</tr>\n</table><table width='100%'>")
+            CV::HTMLputs(file,"</td>\n</tr>\n</table><br />#{middleStuff}")
 
-             @professional.each() {|prof|
+            CV::HTMLputs(file, "<br /> <br /><table width='100%'>")
+
+            #Professional
+            CV::HTMLputs(file, "<tr><td class='section-filler'></td>" +
+                         "<td colspan=3 class='section-title'>" +
+                         "#{CV::stringToBasicHTML(CV::PROF_EXP[@language])}</td></tr>"
+                         ) if @professional.length != 0
+
+           @professional.each() {|prof|
+                CV::HTMLputs(file, "<tr class='entry-padding'></tr>")
                 prof.toHTML(file)
             }
-            CV::HTMLputs(file,"</table></body>")
+
+            # Degress
+            CV::HTMLputs(file, "<tr class='padding-tr'></tr>")
+
+            CV::HTMLputs(file, "<tr><td class='section-filler'></td>" +
+                         "<td class='section-title'>" +
+                         "#{CV::stringToBasicHTML(CV::DEGREES[@language])}</td></tr>"
+                         ) if @degrees.length != 0
+           @degrees.each() {|prof|
+                CV::HTMLputs(file, "<tr class='entry-padding'></tr>")
+               prof.toHTML(file)
+            }
+
+            CV::HTMLputs(file, "<tr class='padding-tr'></tr>")
+
+            # Personal
+            CV::HTMLputs(file, "<tr class='padding-tr'></tr>")
+
+            CV::HTMLputs(file, "<tr><td class='section-filler'></td>" +
+                         "<td class='section-title'>" +
+                         "#{CV::stringToBasicHTML(CV::PERSONAL[@language])}</td></tr>"
+                         ) if @personal.length != 0
+           @personal.each() {|prof|
+                CV::HTMLputs(file, "<tr class='entry-padding'></tr>")
+                prof.toHTML(file)
+            }
+            CV::HTMLputs(file, "<tr class='padding-tr'></tr>")
+
+
+            # Skills
+            CV::HTMLputs(file, "<tr><td class='section-filler'></td><td colspan=3 class='section-title'>" +
+                         "#{CV::stringToBasicHTML(CV::SKILLS[@language])}</td></tr>"
+                         ) if @skills.length != 0 || @languages.length != 0
+            @skills.each() {|skill_type, skill_list|
+                CV::HTMLputs(file, "<tr><td></td><td class='skill-title'>" +
+                             "#{skill_type}</td></tr>")
+                inLine = 0
+                skill_list.each(){|skill|
+                    CV::HTMLputs(file, "<tr>") if inLine == 0
+                    skill.toHTML(file)
+                    inLine +=1
+                    if inLine == 2
+                        CV::HTMLputs(file, "</tr>") 
+                        inLine = 0
+                    end
+                    
+                }
+                if(inLine  != 0)
+                    CV::HTMLputs(file, "</tr>") 
+                end
+                CV::HTMLputs(file, "<tr class='skill-padding'></tr>")
+            }
+
+            CV::HTMLputs(file, "<tr><td></td><td class='skill-title'>" +
+                         "#{CV::LANGUAGES[@language]}</td></tr>") if @languages.length != 0
+            @languages.each() {|lang|
+                lang.toHTML(file)
+            }
+
+           # Other
+            CV::HTMLputs(file, "<tr class='padding-tr'></tr>")
+
+            CV::HTMLputs(file, "<tr><td class='section-filler'></td>" +
+                         "<td class='section-title'>" +
+                         "#{CV::stringToBasicHTML(CV::OTHERS[@language])}</td></tr>"
+                         ) if @other.length != 0
+           @other.each() {|prof|
+                prof.toHTML(file)
+            }
+
+            CV::HTMLputs(file, "<tr class='padding-tr'></tr>")
+            CV::HTMLputs(file, "<tr class='padding-tr'></tr>")
+            CV::HTMLputs(file, "<tr class='padding-tr'></tr>")
+            CV::HTMLputs(file,"</table>#{@footer}</body>")
             file.close()
         end
     end
 
+    class Language
+        attr_accessor :lang, :level, :more
+        def initialize()
+        end
+        def toTeX(file)
+               file.puts "\\cvlanguage{#{@lang}}{#{@level}}{#{CV::stringToTeX(@more)}}"
+        end
+        def toHTML(file)
+               CV::HTMLputs(file, "<tr><td class='lang'>#{@lang}</td>\n" +
+                            "<td>#{CV::stringToBasicHTML(@level)}</td>\n" +
+                            "<td></td><td>#{CV::stringToBasicHTML(more)}</td></tr>")
+        end
+    end
 
+   class Other
+        attr_accessor :cat, :more
+        def initialize()
+        end
+        def toTeX(file)
+               file.puts "\\cvline{#{@cat}}{#{CV::stringToTeX(@more)}}"
+        end
+        def toHTML(file)
+               CV::HTMLputs(file, "<tr><td class='entry-other'>#{@cat}</td>\n" +
+                            "<td colspan=3>#{CV::stringToBasicHTML(@more)}</td></tr>")
+        end
+    end
     class Entry
         attr_accessor :date, :title, :company, :city, :country, :details
         def initialize()
             @details=[]
         end
         def toTeX(file)
-            file.puts "\\cventry{#{@date}}{#{@title}}{#{@company}}{#{@city}}{#{@country}}{"
+            file.puts "\\cventry{#{CV::stringToTeX(@date)}}"+
+                "{#{@title}}{#{@company}}{#{@city}}{#{@country}}{"
             if @details.length > 0 then
                 file.puts "\\begin{itemize}"
                 @details.each() {|detail|
@@ -117,38 +284,29 @@ module CV
             file.puts "}"
         end
         def toHTML(file)
-            CV::HTMLputs(file, "<tr><td>#{@date}</td><td><b>#{@title}</b>, <i>#{@company}</i>, #{@city}")
+            CV::HTMLputs(file, "<tr><td>#{CV::stringToBasicHTML(@date)}</td>"+
+                         "<td colspan=3><b>#{@title}</b>")
+            CV::HTMLputs(file, ", <i>#{@company}</i>") if @company != nil
+            CV::HTMLputs(file, ", #{@city}") if @city != nil
             CV::HTMLputs(file, ", #{@country}") if @country != nil
-            CV::HTMLputs(file, ".<br />")
+#            CV::HTMLputs(file, ".<br />")
             @details.each() {|detail|
                 CV::HTMLputs(file, "<li>#{detail}<br />")
             }
                 CV::HTMLputs(file, "</td></tr>")
         end
     end
+
+    class Skill
+        attr_accessor :type, :content
+        def initialize()
+        end
+        def toTeX(file)
+            file.puts "{#{type}{#{CV::stringToTeX(@content)}}"
+        end
+        def toHTML(file)
+            CV::HTMLputs(file, "<td class='skill-name'>#{@type}</td><td>#{@content}</td>")
+         end
+   end
+
 end
-cv = CV::Top.new()    
-cv.firstName="Nicolas"
-cv.lastName="Morey-Chaisemartin"
-cv.title="Développeur Logiciel et !BR!Systèmes Embarqués"
-cv.address="8 Rue Tristan Corbière"
-cv.city="38400 Saint Martin d'Hères"
-cv.mobile="+33 6 78 31 51 62"
-cv.email="nicolas@morey-chaisemartin.com"
-cv.homepage="nicolas.morey-chaisemartin.com"
-cv.extras << "29/06/1986"
-
-entry = CV::Entry.new()
-entry.date="Juillet 2009 à Aujourd'hui"
-entry.title="Architecte et développeur logiciel embarqué"
-entry.company="Kalray"
-entry.city="Montbonnot"
-entry.details << "Développement de système d'exploitation et de librairies runtime pour l'embarqué."
-entry.details << "Développement d'un !B!compilateur!B! front-end pour un langage de Streaming hautement parallèle"
-entry.details << "Responsable de l'!B!intégration continue!B! sous Git/Hudson"
-entry.details << "Co-Administrateur IT"
-entry.details << "Environnement; !B!Systèmes embarqués!B!, MPPA, C, Assembleur, Ruby, Programation parallèle" 
-cv.professional << entry
-
-cv.toTeX("output.tex")
-cv.toHTML("output.html")
