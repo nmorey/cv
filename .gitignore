@@ -1,6 +1,10 @@
 *~
-cv.aux
-cv.pdf
-cv.log
-cv.out
+*.aux
+*.pdf
+*.log
+*.out
 rules.ini
+cv.tex
+cv-anglais.tex
+index.html
+index_fr.html

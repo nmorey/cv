@@ -266,10 +266,10 @@ cv.header= "
 <td class='header-cell'><a href='/piwigo/'>Photos</a></td>
 <td class='header-cell'><a href='https://github.com/nmorey/'>My GitHub Stuff</a></td>
 <td class='header-cell'><a href='/cellreport.pdf'>Cell Broadband Engine</a></td>
-<td class='header-cell'><a href='/Virt-K.pdf'>Virt-K: Hard Real Time Kernel for the Cell Broadband Engine</a></td></tr></table></p>"
+<td class='header-cell'><a href='/Virt-K.pdf'>Virt-K: Hard Real Time Kernel for the Cell Broadband Engine</a></td></tr></table>"
 cv.middleStuff="
-                <a href=\"cv-anglais.pdf\"> CV PDF in English </a><br>
-                <a href=\"cv.pdf\"> CV PDF in French</a><br>
+                <a href=\"download.php?mirror=uk&id=cv-anglais.pdf\"> CV PDF in English </a><br>
+                <a href=\"download.php?mirror=uk&id=cv.pdf\"> CV PDF in French</a><br>
 "
 cv.footer = "
 <script type=\"text/javascript\">
@@ -407,6 +407,6 @@ cv.footer = "
 # THE END
 #############
 
-cv.toTeX('_cv_anglais.tex')
+cv.toTeX('cv-anglais.tex')
 cv.toHTML('index.html')
 
