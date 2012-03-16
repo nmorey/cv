@@ -78,35 +78,35 @@ module CV
                 prof.toTeX(file)
             }
 
-            file.puts "\\section{#{CV::DEGREES[@language]}}" if @degrees.length != 0
+            file.puts "\n\\section{#{CV::DEGREES[@language]}}" if @degrees.length != 0
             @degrees.each() {|prof|
                 prof.toTeX(file)
             }
 
-            file.puts "\\section{#{CV::PERSONAL[@language]}}" if @personal.length != 0
+            file.puts "\n\n\\section{#{CV::PERSONAL[@language]}}" if @personal.length != 0
             @personal.each() {|prof|
                 prof.toTeX(file)
             }
 
-            file.puts "\\section{#{CV::SKILLS[@language]}}" if @skills.length != 0  ||
+            file.puts "\n\n\\section{#{CV::SKILLS[@language]}}" if @skills.length != 0  ||
                 @languages.length != 0
             @skills.each() {|skill_type, skill_list|
-                file.puts "\\subsection{#{@skill_type}}"
+                file.puts "\n\n\\subsection{#{@skill_type}}"
                 inLine = 0
                 skill_list.each(){|skill|
-                    CV::HTMLputs(file, "\\cvcomputer") if inLine == 0
+                    CV::HTMLputs(file, "\n\n\\cvcomputer") if inLine == 0
                     skill.toTeX(file)
                     inLine += 1
                     inLine = 0 if inLine == 2
                 }
                 file.puts "{}{}" if inLine != 0
             }
-            file.puts "\\subsection{#{CV::LANGUAGES[@language]}}" if @languages.length != 0
+            file.puts "\n\n\\subsection{#{CV::LANGUAGES[@language]}}" if @languages.length != 0
             @languages.each(){|lang|
                 lang.toTeX(file)
             }
 
-            file.puts "\\section{#{CV::OTHERS[@language]}}" if @other.length != 0
+            file.puts "\n\n\\section{#{CV::OTHERS[@language]}}" if @other.length != 0
             @other.each(){|ot|
                 ot.toTeX(file)
             }
@@ -272,7 +272,7 @@ module CV
             @details=[]
         end
         def toTeX(file)
-            file.puts "\\cventry{#{CV::stringToTeX(@date)}}"+
+            file.printf "\\cventry{#{CV::stringToTeX(@date)}}"+
                 "{#{@title}}{#{@company}}{#{@city}}{#{@country}}{"
             if @details.length > 0 then
                 file.puts "\\begin{itemize}"
