@@ -103,14 +103,14 @@ cv.professional << entry
 # Etudes
 #############
 entry = CV::Entry.new()
-entry.date="2010"
+entry.date="2008"
 entry.title="Computing Science Engineer"
 entry.company="ENSIMAG"
 entry.city="Grenoble"
 cv.degrees << entry
 
 entry = CV::Entry.new()
-entry.date="2010"
+entry.date="2008"
 entry.title="MSc in Embedded systems"
 entry.company="Northumbria University"
 entry.city="Newcastle"
@@ -121,13 +121,6 @@ cv.degrees << entry
 #############
 # Exp Perso
 #############
-entry = CV::Entry.new()
-entry.date="2008!BR!upto Today"
-entry.title="Contributions to Open Source projects"
-entry.details << "Contribution to mailing list and development of !B!Linux!B!, !B!Git!B!, OpenSM."
-
-entry.details << "Occasional involvement in various projects: Sick-Beard, RBTools, libdbi..."
-cv.personal << entry
 
 entry = CV::Entry.new()
 entry.date="2011!BR!upto Today"
@@ -135,6 +128,13 @@ entry.title="Damage (DAtabase MetA GEnerator)"
 entry.details << "Development of a script toolset for custom database generation."
 entry.details << "Generates a complete access and modification API for C, Java, Ruby to XML/YAML/Binary databases from a simple YAML description."
 entry.details << "Environnement: Ruby, GPL."
+cv.personal << entry
+
+entry = CV::Entry.new()
+entry.date="2008!BR!upto Today"
+entry.title="Contributions to Open Source projects"
+entry.details << "Contribution to mailing list and development of !B!Linux!B!, !B!Git!B!, OpenSM."
+entry.details << "Occasional involvement in various projects: Sick-Beard, RBTools, libdbi..."
 cv.personal << entry
 
 entry = CV::Entry.new()

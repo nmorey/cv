@@ -103,14 +103,14 @@ cv.professional << entry
 # Etudes
 #############
 entry = CV::Entry.new()
-entry.date="2010"
+entry.date="2008"
 entry.title="Ingénieur en informatique"
 entry.company="ENSIMAG"
 entry.city="Grenoble"
 cv.degrees << entry
 
 entry = CV::Entry.new()
-entry.date="2010"
+entry.date="2008"
 entry.title="Master en Systèmes Embarqués"
 entry.company="Université de Northumbria"
 entry.city="Newcastle"
@@ -123,19 +123,19 @@ cv.degrees << entry
 # Exp Perso
 #############
 entry = CV::Entry.new()
-entry.date="2008!BR!à Aujourd'hui"
-entry.title="Participation à des projets Open Source"
-entry.details << "Participations au mailing list et au développement de !B!Linux!B!, !B!Git!B!, OpenSM."
-entry.details << "Participations ponctuelles sur divers projets: Sick-Beard, RBTools, libdbi..."
-cv.personal << entry
-
-entry = CV::Entry.new()
 entry.date="2011!BR!à Aujourd'hui"
 entry.title="Damage (DAtabase MetA GEnerator)"
 entry.details << "Développement d'un ensemble de script de génération de formats intermédiaires."
 entry.details << "Permet à partir d'une description YAML, de générer toutes les méthodes de!BR!"+
     " lecture/écriture/modification vers des formats XML/YAML/binaire depuis du C, Java ou Ruby."
 entry.details << "Environnement: Ruby, GPL."
+cv.personal << entry
+
+entry = CV::Entry.new()
+entry.date="2008!BR!à Aujourd'hui"
+entry.title="Participation à des projets Open Source"
+entry.details << "Participations au mailing list et au développement de !B!Linux!B!, !B!Git!B!, OpenSM."
+entry.details << "Participations ponctuelles sur divers projets: Sick-Beard, RBTools, libdbi..."
 cv.personal << entry
 
 entry = CV::Entry.new()
