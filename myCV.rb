@@ -260,14 +260,14 @@ cv.header= "
 <table class='header-menu' cellpadding='5' cellspacing='2'>
 <td class='header-cell'><a href=' index_fr.html'><img src='fr_flag.jpg' height='30' width='50' alt='FR'></a></td>
 <td class='header-cell'><a href='index_en.html'><img  src='uk_flag.jpg' height='30' width='50' alt='EN'></a></td>
-<td class='header-cell'><a href='/piwigo/'>Photos</a></td>
+<td class='header-cell'><a href='/photos/'>Photos</a></td>
 <td class='header-cell'><a href='https://github.com/nmorey/'>Mon GitHub</a></td>
 <td class='header-cell'><a href='/cellreport.pdf'>Cell Broadband Engine</a></td>
 <td class='header-cell'><a href='/Virt-K.pdf'>Virt-K: Kernel Temps Réel pour le Cell Broadband Engine</a></td></tr></table>"
 cv.middleStuff="
                 <a href=\"download.php?mirror=uk&id=cv.pdf\"> CV PDF en Francais</a><br>
                 <a href=\"download.php?mirror=uk&id=cv-anglais.pdf\"> CV PDF en Anglais </a><br><br>
-                <a href=\"piwigo/\">Allez voir mes photos de vacances et randos!!</a><br>
+                <a href=\"photos/\">Allez voir mes photos de vacances et randos!!</a><br>
 "
 cv.footer = "
 <script type=\"text/javascript\">
