@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require 'cv'
+require './cv'
 
 cv = CV::Top.new()    
 cv.language = :fr
