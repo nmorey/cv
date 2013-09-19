@@ -23,4 +23,4 @@ clean:
 	rm -f cv.pdf cv-anglais.pdf  *.toc *.aux *.bbl *.blg *.dvi *.log *.out 
 
 install: cv.pdf cv-anglais.pdf
-	scp cv.pdf cv-anglais.pdf  index.html index_fr.html cv.css cv-pic.jpg www:www/
+	scp cv.pdf cv-anglais.pdf  index.html index_fr.html cv.css cv-pic.jpg www:www-nico/
