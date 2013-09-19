@@ -24,8 +24,11 @@ entry.company="Kalray"
 entry.city="Montbonnot"
 entry.details << "Développement de système d'exploitation et de librairies runtime pour l'embarqué."
 entry.details << "Développement d'un !B!compilateur!B! front-end pour un langage de Streaming hautement parallèle."
+entry.details << "Développement d'outils de !B!cadencement, placement et routage!B! pour des applications de Streaming."
 entry.details << "Responsable de l'!B!intégration continue!B! sous Git/Hudson."
+entry.details << "Portage, parallélisation et optimisation d'un encodeur 4K !B!HEVC!B!."
 entry.details << "Co-Administrateur IT."
+entry.details << "Gestion de projet !B!AGILE/Scrum!B!."
 entry.details << "Environnement; !B!Systèmes embarqués!B!, MPPA, C, Assembleur, Ruby, Programation parallèle." 
 cv.professional << entry
 
@@ -240,6 +243,24 @@ lang= CV::Language.new()
 lang.lang = "Allemand"
 lang.level = "Notions"
 cv.languages << lang
+
+
+#############
+# Brevets
+#############
+patent= CV::Patent.new()
+patent.reference = "WO2011001362"
+patent.title = "Procédés et dispositifs destinés à évaluer une efficacité d'interconnexion de réseaux informatiques parallèles sur la base de systèmes de routage statiques"
+cv.patents << patent
+patent= CV::Patent.new()
+patent.reference = "WO2011151569"
+patent.title = "Procédé de routage pseudo-dynamique dans un cluster comprenant des liens de communication statiques et programme d'ordinateur mettant en oeuvre ce procédé"
+cv.patents << patent
+patent= CV::Patent.new()
+patent.reference = "WO2011144848"
+patent.title = "Procédé d'optimisation de routage dans un cluster comprenant des liens de communication statiques et programme d'ordinateur mettant en oeuvre ce procédé"
+cv.patents << patent
+
 #############
 # Other
 #############

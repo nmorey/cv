@@ -24,8 +24,11 @@ entry.company="Kalray"
 entry.city="Montbonnot"
 entry.details << "Development of an embedded operating system and runtime library."
 entry.details << "Development of a front-end !B!compiler!B! for a highly parallel streaming language."
+entry.details << "Development of !B!scheduling, placing and routing!B! tools for streaming applications"
 entry.details << "In charge of !B!continuous integration!B! using Git/Hudson."
-entry.details << "IT Co-administrator ."
+entry.details << "Port, parallelization and optimisation of a 4K !B!HEVC!B! encoder."
+entry.details << "IT Co-administrator."
+entry.details << "!B!Agile/Scrum!B! Project Management."
 entry.details << "Environment: !B!Embedded systems!B!, MPPA, C, Assembly, Ruby, Parallel programming."
 cv.professional << entry
 
@@ -97,7 +100,11 @@ entry.details << "Development of demonstration scripts for CAO tools."
 entry.details << "GUI integration of several tools."
 entry.details << "Live demonstration at an international micro-electronic exhibition in the USA.(DAC)."
 entry.details << "Environment: Tcl, Tk."
+entry.details << ""
+entry.details << ""
+entry.details << ""
 cv.professional << entry
+
 
 #############
 # Etudes
@@ -243,6 +250,24 @@ lang= CV::Language.new()
 lang.lang = "German"
 lang.level = "School level"
 cv.languages << lang
+
+
+#############
+# Patents
+#############
+patent= CV::Patent.new()
+patent.reference = "WO2011001362"
+patent.title = "Methods and devices for evaluating interconnection efficiency of parallel computer networks based upon static routing schemes"
+cv.patents << patent
+patent= CV::Patent.new()
+patent.reference = "WO2011151569"
+patent.title = "Method of pseudo-dynamic routing in a cluster comprising static communication links and computer program implementing this method"
+cv.patents << patent
+patent= CV::Patent.new()
+patent.reference = "WO2011144848"
+patent.title = "Method of optimizing routing in a cluster comprising static communication links and computer program implementing this method"
+cv.patents << patent
+
 #############
 # Other
 #############
