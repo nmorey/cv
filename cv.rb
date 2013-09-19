@@ -10,6 +10,7 @@ module CV
     SKILLS ={:en=> "Skills", :fr=>"Compétences"}
     OTHERS ={:en=> "Others", :fr=>"Divers"}
     LANGUAGES ={:en=> "Languages", :fr=>"Langages"}
+    PATENTS ={:en=> "Patents", :fr=>"Brevets"}
 
     def stringToTeX(str)
         return nil if str == nil
@@ -39,7 +40,7 @@ module CV
     class Top
         attr_accessor :firstName, :lastName, :title, :address, :city,
         :mobile, :email, :homepage, :extras, :professional, :degrees,
-        :personal, :skills, :languages,:other, :language, :pagetitle,
+        :personal, :skills, :languages,:other, :patents, :language, :pagetitle,
         :header, :footer, :middleStuff
         def initialize()
             @extras=[]
@@ -50,6 +51,7 @@ module CV
             @other=[]
             @language = :fr
             @languages=[]
+            @patents=[]
         end
         def toTeX(filename)
             file = File.open(filename, "w")
@@ -105,7 +107,10 @@ module CV
             @languages.each(){|lang|
                 lang.toTeX(file)
             }
-
+            file.puts "\n\n\\section{#{CV::PATENTS[@language]}}" if @patents.length != 0
+            @patents.each(){|lang|
+                lang.toTeX(file)
+            }
             file.puts "\n\n\\section{#{CV::OTHERS[@language]}}" if @other.length != 0
             @other.each(){|ot|
                 ot.toTeX(file)
@@ -221,6 +226,16 @@ module CV
                 lang.toHTML(file)
             }
 
+
+            CV::HTMLputs(file, "<tr class='padding-tr'></tr>")
+            CV::HTMLputs(file, "<tr><td class='section-filler'></td>" +
+                         "<td class='section-title'>" +
+                         "#{CV::stringToBasicHTML(CV::PATENTS[@language])}</td></tr>"
+                         ) if @patents.length != 0
+            @patents.each() {|patent|
+                patent.toHTML(file)
+            }
+
            # Other
             CV::HTMLputs(file, "<tr class='padding-tr'></tr>")
 
@@ -253,8 +268,7 @@ module CV
                             "<td></td><td>#{CV::stringToBasicHTML(more)}</td></tr>")
         end
     end
-
-   class Other
+    class Other
         attr_accessor :cat, :more
         def initialize()
         end
@@ -306,7 +320,19 @@ module CV
         end
         def toHTML(file)
             CV::HTMLputs(file, "<td class='skill-name'>#{@type}</td><td>#{@content}</td>")
-         end
-   end
+        end
+    end
+    class Patent
+        attr_accessor :reference, :title
+         def initialize()
+        end
+        def toTeX(file)
+            file.puts "\\cvline{#{@reference}}{#{CV::stringToTeX(@title)}}"
+        end
+        def toHTML(file)
+            CV::HTMLputs(file, "<tr><td class='entry-other'>#{@reference}</td>\n" +
+                         "<td colspan=3>#{CV::stringToBasicHTML(@title)}</td></tr>")
+        end
+    end
 
 end
