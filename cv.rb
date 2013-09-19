@@ -291,7 +291,7 @@ module CV
             if @details.length > 0 then
                 file.puts "\\begin{itemize}"
                 @details.each() {|detail|
-                    file.puts "\\item[-]{#{CV::stringToTeX(detail)}}"
+                    file.puts "\\item[#{detail != "" ? "-" : ""}]{#{CV::stringToTeX(detail)}}"
                 }
                 file.puts "\\end{itemize}"
             end
@@ -305,6 +305,7 @@ module CV
             CV::HTMLputs(file, ", #{@country}") if @country != nil
 #            CV::HTMLputs(file, ".<br />")
             @details.each() {|detail|
+                next if detail == ""
                 CV::HTMLputs(file, "<li>#{detail}<br />")
             }
                 CV::HTMLputs(file, "</td></tr>")
