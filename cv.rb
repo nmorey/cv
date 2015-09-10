@@ -57,7 +57,7 @@ module CV
         def toTeX(filename)
             file = File.open(filename, "w")
             file.puts "\\documentclass[10pt,a4paper]{moderncv}
-\\moderncvtheme[blue]{classic}                
+\\moderncvtheme[blue]{mycv}                
 \\usepackage[utf8]{inputenc}
 \\usepackage[scale=0.8]{geometry}
 
