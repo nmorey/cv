@@ -320,8 +320,8 @@ cv.header= "
 <td class='header-cell'><a href='/cellreport.pdf'>Cell Broadband Engine</a></td>
 <td class='header-cell'><a href='/Virt-K.pdf'>Virt-K: Kernel Temps Réel pour le Cell Broadband Engine</a></td></tr></table>"
 cv.middleStuff="
-                <a href=\"download.php?mirror=uk&id=cv.pdf\"> CV PDF en Francais</a><br>
-                <a href=\"download.php?mirror=uk&id=cv-anglais.pdf\"> CV PDF en Anglais </a><br><br>
+                <a href=\"download.php?mirror=uk&id=cv-fr.pdf\"> CV PDF en Francais</a><br>
+                <a href=\"download.php?mirror=uk&id=cv-en.pdf\"> CV PDF en Anglais </a><br><br>
                 <a href=\"photos/\">Allez voir mes photos de vacances et randos!!</a><br>
 "
 cv.footer = "
@@ -460,6 +460,6 @@ cv.footer = "
 # THE END
 #############
 
-cv.toTeX('cv.tex')
+cv.toTeX('cv-fr.tex')
 cv.toHTML('index_fr.html')
 
