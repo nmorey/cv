@@ -6,7 +6,7 @@ cv.language = :en
 
 cv.firstName="Nicolas"
 cv.lastName="Morey-Chaisemartin"
-cv.title="Embedded Software Architect -!BR! Front-End and Operating System Developper"
+cv.title="Embedded Software Architect / Developer"
 cv.address="8 Rue Tristan Corbière"
 cv.city="38400 Saint Martin d'Hères"
 cv.mobile="+33 6 42 46 68 87"
@@ -18,7 +18,30 @@ cv.extras << "29/06/1986"
 # Exp Pro
 #############
 entry = CV::Entry.new()
-entry.date="July 2009!BR!upto Today"
+entry.date="April 2015!BR!upto Today"
+entry.title="Network solutions manager"
+entry.company="Kalray"
+entry.city="Montbonnot"
+entry.details << "Conception of a 80Gb/s smartNIC product"
+entry.details << "Port and optimization of !B!OpenDataPlane!B! on MPPA."
+entry.details << "management of a 5 engineer team"
+entry.details << "High-speed PCI and Ethernet interfaces support"
+entry.details << "Environment: MPPA, C, ODP, Ethernet, PCI."
+cv.professional << entry
+
+entry = CV::Entry.new()
+entry.date="July 2013!BR!upto April 2015"
+entry.title="Video solutions manager"
+entry.company="Kalray"
+entry.city="Montbonnot"
+entry.details << "Design and development of a flexible !B!HEVC!B! core encoder optimized for MPPA"
+entry.details << "Technical leader and management of a small development team"
+entry.details << "Port, parallelisation and optimization of MainConceot 4K !B!HEVC!B! encoder on MPPA"
+entry.details << "Environment: MPPA, C, C++, Ruby, Parallel programming, HEVC."
+cv.professional << entry
+
+entry = CV::Entry.new()
+entry.date="July 2009!BR!upto July 2013"
 entry.title="Embedded software architect and developper"
 entry.company="Kalray"
 entry.city="Montbonnot"
@@ -91,19 +114,19 @@ entry.details << "Development of !B!non-regression tools!B! for Xyalis complete 
 entry.details << "Environment: Bash, Tcl, Tk."
 cv.professional << entry
 
-entry = CV::Entry.new()
-entry.date="July 2001"
-entry.title="Intern"
-entry.company="Xyalis"
-entry.city="Grenoble"
-entry.details << "Development of demonstration scripts for CAO tools."
-entry.details << "GUI integration of several tools."
-entry.details << "Live demonstration at an international micro-electronic exhibition in the USA.(DAC)."
-entry.details << "Environment: Tcl, Tk."
-entry.details << ""
-entry.details << ""
-entry.details << ""
-cv.professional << entry
+# entry = CV::Entry.new()
+# entry.date="July 2001"
+# entry.title="Intern"
+# entry.company="Xyalis"
+# entry.city="Grenoble"
+# entry.details << "Development of demonstration scripts for CAO tools."
+# entry.details << "GUI integration of several tools."
+# entry.details << "Live demonstration at an international micro-electronic exhibition in the USA.(DAC)."
+# entry.details << "Environment: Tcl, Tk."
+# entry.details << ""
+# entry.details << ""
+# entry.details << ""
+# cv.professional << entry
 
 
 #############
@@ -130,18 +153,18 @@ cv.degrees << entry
 #############
 
 entry = CV::Entry.new()
+entry.date="2008!BR!upto Today"
+entry.title="Contributions to Open Source projects"
+entry.details << "Contribution to mailing list and development of !B!Linux!B!, !B!Git!B!, OpenSM, ODP."
+entry.details << "Occasional involvement in various projects: Sick-Beard, RBTools, libdbi..."
+cv.personal << entry
+
+entry = CV::Entry.new()
 entry.date="2011!BR!upto Today"
 entry.title="Damage (DAtabase MetA GEnerator)"
 entry.details << "Development of a script toolset for custom database generation."
 entry.details << "Generates a complete access and modification API for C, Java, Ruby to XML/YAML/Binary databases from a simple YAML description."
 entry.details << "Environnement: Ruby, GPL."
-cv.personal << entry
-
-entry = CV::Entry.new()
-entry.date="2008!BR!upto Today"
-entry.title="Contributions to Open Source projects"
-entry.details << "Contribution to mailing list and development of !B!Linux!B!, !B!Git!B!, OpenSM."
-entry.details << "Occasional involvement in various projects: Sick-Beard, RBTools, libdbi..."
 cv.personal << entry
 
 entry = CV::Entry.new()
@@ -158,18 +181,18 @@ entry.details << "Administration of a mixed Linux/Windows network."
 entry.details << "Participation to cost assessments of N'Sigma contracts."
 cv.personal << entry
 
-entry = CV::Entry.new()
-entry.date="2005"
-entry.title="Development of a micro-controller"
-entry.details << "Development and debug of an 8bit micro-controller with VGA output on a FPGA."
-cv.personal << entry
+# entry = CV::Entry.new()
+# entry.date="2005"
+# entry.title="Development of a micro-controller"
+# entry.details << "Development and debug of an 8bit micro-controller with VGA output on a FPGA."
+# cv.personal << entry
 
-entry = CV::Entry.new()
-entry.date="2004"
-entry.title="National programming contest Prologin"
-entry.details << "Development of an AI for a strategy game."
-entry.details << "Ranked !B!5th!B!."
-cv.personal << entry
+# entry = CV::Entry.new()
+# entry.date="2004"
+# entry.title="National programming contest Prologin"
+# entry.details << "Development of an AI for a strategy game."
+# entry.details << "Ranked !B!5th!B!."
+# cv.personal << entry
 
 #############
 # Skills
@@ -181,8 +204,18 @@ skill.content= "!B!C!B!, !B!Ruby!B!, Java, Assembleur, Ada, Php, C++"
 infoSkills << skill
 
 skill = CV::Skill.new()
-skill.type = "Development tools"
-skill.content= "Emacs, Netbeans, SQLDevelopper, Eclipse"
+skill.type="Graphical Environment"
+skill.content="!B!X11!B!, Gtk, Tk, Swing, !B!Qt!B!"
+infoSkills << skill
+
+skill = CV::Skill.new()
+skill.type = "Tools"
+skill.content= "Emacs, Netbeans, Eclipse, gcc, !B!gdb!B!"
+infoSkills << skill
+
+skill = CV::Skill.new()
+skill.type = "Video"
+skill.content= "!B!H.265!B!, x265"
 infoSkills << skill
 
 skill = CV::Skill.new()
@@ -202,28 +235,23 @@ infoSkills << skill
 
 skill = CV::Skill.new()
 skill.type="Networking"
-skill.content="Routage, Firewall, TCP/IP, Ethernet, !B!Sockets!B!, QoS, !B!Infiniband!B!"
-infoSkills << skill
-
-skill = CV::Skill.new()
-skill.type="Graphical Environment"
-skill.content="!B!X11!B!, Gtk, Tk, Swing"
+skill.content="Routage, Firewall, TCP/IP, Ethernet, !B!Sockets!B!, QoS, !B!Infiniband!B!, !B!ODP!B!"
 infoSkills << skill
 
 skill = CV::Skill.new()
 skill.type="Databases"
-skill.content="!B!Conception!B!, Optimisation, !B!SQL!B!, Oracle, MySQL, LDAP"
+skill.content="!B!SQL!B!, Oracle, MySQL, LDAP, !B!Conception!B!, Optimisation"
 infoSkills << skill
 
-skill = CV::Skill.new()
-skill.type="Software Design"
-skill.content="!B!UML!B!"
-infoSkills << skill
+# skill = CV::Skill.new()
+# skill.type="Software Design"
+# skill.content="!B!UML!B!"
+# infoSkills << skill
 
-skill = CV::Skill.new()
-skill.type="Hardware Design"
-skill.content="!B!VHDL!B!, Modelsim"
-infoSkills << skill
+# skill = CV::Skill.new()
+# skill.type="Hardware Design"
+# skill.content="!B!VHDL!B!, Modelsim"
+# infoSkills << skill
 
 skill = CV::Skill.new()
 skill.type="Mathematic Tools"
@@ -273,13 +301,18 @@ cv.patents << patent
 #############
 ot = CV::Other.new()
 ot.cat="Hobbies"
-ot.more = "Hiking, skiing, travelling, photography, books and movies."
+ot.more = "Mountains, photography, traveling, guitar."
 cv.other << ot
 
 ot = CV::Other.new()
 ot.cat="Sport"
-ot.more = "Former hang-glider pilot, member of the French Youth National team."
+ot.more = "Mountaineering, rock climbing, hiking, ski and ski touring."
 cv.other << ot
+
+# ot = CV::Other.new()
+# ot.cat="Sport"
+# ot.more = "Former hang-glider pilot, member of the French Youth National team."
+# cv.other << ot
 
 ###############
 # HTML STUFF

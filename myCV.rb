@@ -148,6 +148,14 @@ cv.degrees << entry
 #############
 # Exp Perso
 #############
+
+entry = CV::Entry.new()
+entry.date="2008!BR!à Aujourd'hui"
+entry.title="Participation à des projets Open Source"
+entry.details << "Participations au mailing list et au développement de !B!Linux!B!, !B!Git!B!, OpenSM, ODP."
+entry.details << "Participations ponctuelles sur divers projets: Sick-Beard, RBTools, libdbi..."
+cv.personal << entry
+
 entry = CV::Entry.new()
 entry.date="2011!BR!à Aujourd'hui"
 entry.title="Damage (DAtabase MetA GEnerator)"
@@ -157,12 +165,6 @@ entry.details << "Permet à partir d'une description YAML, de générer toutes l
 entry.details << "Environnement: Ruby, GPL."
 cv.personal << entry
 
-entry = CV::Entry.new()
-entry.date="2008!BR!à Aujourd'hui"
-entry.title="Participation à des projets Open Source"
-entry.details << "Participations au mailing list et au développement de !B!Linux!B!, !B!Git!B!, OpenSM, ODP."
-entry.details << "Participations ponctuelles sur divers projets: Sick-Beard, RBTools, libdbi..."
-cv.personal << entry
 
 entry = CV::Entry.new()
 entry.date="2006"
@@ -208,7 +210,7 @@ infoSkills << skill
 
 skill = CV::Skill.new()
 skill.type = "Outils" # de dévelopmment
-skill.content= "Emacs, Netbeans, Eclipse" # SQLDevelopper, 
+skill.content= "Emacs, Netbeans, Eclipse, gcc, !B!gdb!B!" # SQLDevelopper, 
 infoSkills << skill
 
 skill = CV::Skill.new()
@@ -227,7 +229,7 @@ skill.content="!B!Git!B!, !B!Gitolite!B!, !B!Hudson!B!, CVS, SVN, SCCS"
 infoSkills << skill
 
 skill = CV::Skill.new()
-skill.type="Administration"
+skill.type="Administration Système"
 skill.content="!B!Linux!B!, FreeBSD, Samba, Postfix, Apache, Shell scripting (Bash, Sed, Awk)"
 infoSkills << skill
 
@@ -238,7 +240,7 @@ infoSkills << skill
 
 skill = CV::Skill.new()
 skill.type="Bases de données"
-skill.content="Oracle, MySQL, LDAP, !B!Conception!B!, Optimisation, "
+skill.content="Oracle, MySQL, LDAP, !B!Conception!B!, Optimisation"
 infoSkills << skill
 
 # skill = CV::Skill.new()
