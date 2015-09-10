@@ -40,7 +40,7 @@ module CV
     class Top
         attr_accessor :firstName, :lastName, :title, :address, :city,
         :mobile, :email, :homepage, :extras, :professional, :degrees,
-        :personal, :skills, :languages,:other, :patents, :language, :pagetitle,
+        :personal, :skills, :skill_cols, :languages,:other, :patents, :language, :pagetitle,
         :header, :footer, :middleStuff
         def initialize()
             @extras=[]
@@ -48,6 +48,7 @@ module CV
             @degrees=[]
             @personal=[]
             @skills={}
+            @skills_cols = 2
             @other=[]
             @language = :fr
             @languages=[]
@@ -95,13 +96,23 @@ module CV
             @skills.each() {|skill_type, skill_list|
                 file.puts "\n\n\\subsection{#{@skill_type}}"
                 inLine = 0
-                skill_list.each(){|skill|
-                    CV::HTMLputs(file, "\n\n\\cvcomputer") if inLine == 0
-                    skill.toTeX(file)
-                    inLine += 1
-                    inLine = 0 if inLine == 2
-                }
-                file.puts "{}{}" if inLine != 0
+                case @skills_cols
+                when 1
+                    skill_list.each(){|skill|
+                        CV::HTMLputs(file, "\n\n\\cvline")
+                        skill.toTeX(file)
+            }
+                when 2
+                    skill_list.each(){|skill|
+                        CV::HTMLputs(file, "\n\n\\cvcomputer") if inLine == 0
+                        skill.toTeX(file)
+                        inLine += 1
+                        inLine = 0 if inLine == 2
+                    }
+                    file.puts "{}{}" if inLine != 0
+                else
+                    raise("Invalid # of skill columns")
+                end
             }
             file.puts "\n\n\\subsection{#{CV::LANGUAGES[@language]}}" if @languages.length != 0
             @languages.each(){|lang|
