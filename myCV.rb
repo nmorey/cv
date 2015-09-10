@@ -61,7 +61,7 @@ entry.title="Ingénieur en Systèmes embarqués"
 entry.company="Coframi"
 entry.city="Meylan"
 entry.details << "Mission chez Bull dans l'équipe R\&D HPC: Expert !B!Infiniband!B!."
-entry.details << "Développement d'!B!algorithmes de routage!B! fault-tolerant(dépot de brevets)."
+entry.details << "Développement d'!B!algorithmes de routage!B! fault-tolerant (dépot de brevets)."
 entry.details << "Mise en place de solution de monitoring réseau pour grand clusters."
 entry.details << "Environnement: Infiniband, Routage, QoS, !B!Drivers Linux!B!, !B!HPC!B!."
 cv.professional << entry
