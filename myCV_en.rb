@@ -38,7 +38,7 @@ entry.company="Kalray"
 entry.city="Montbonnot"
 entry.details << "Design and development of a flexible !B!HEVC!B! core encoder optimized for MPPA"
 entry.details << "Technical leader and management of a small development team"
-entry.details << "Port, parallelization and optimization of MainConceot 4K !B!HEVC!B! encoder on MPPA"
+entry.details << "Port, parallelization and optimization of MainConcept 4K !B!HEVC!B! encoder on MPPA"
 entry.details << "Environment: MPPA, C, C++, Ruby, Parallel programming, HEVC."
 cv.professional << entry
 
