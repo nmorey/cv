@@ -26,7 +26,8 @@ entry.details << "Conception d'une solution SmartNIC 80Gb/s."
 entry.details << "Portage et optimisation d'!B!OpenDataPlane!B! pour le MPPA."
 entry.details << "Gestion d'une équipe de 5 personnes"
 entry.details << "Support d'interfaces haut débit PCI, Ethernet"
-entry.details << "Environnement: MPPA, C, ODP, Ethernet, PCI."
+entry.details << "Responsable de tous les drivers Linux: !B!PCI, netdev, AF ALG, crypto, RoCE, DPDK!B!"
+entry.details << "Environnement: MPPA, C, ODP, Ethernet, PCI, !B!Drivers Linux!B!."
 cv.professional << entry
 
 entry = CV::Entry.new()
@@ -220,7 +221,7 @@ infoSkills << skill
 
 skill = CV::Skill.new()
 skill.type="Systèmes d'exploitation"
-skill.content="!B!Kernel!B!, !B!Scheduling!B!, Programmation concurrentielle, !B!Drivers!B!, Signaux"
+skill.content="!B!Kernel!B!, Programmation concurrentielle, !B!Drivers!B!, Signaux"
 infoSkills << skill
 
 skill = CV::Skill.new()
@@ -267,11 +268,6 @@ lang= CV::Language.new()
 lang.lang = "Anglais"
 lang.level = "lu, parlé, écrit"
 lang.more = "Score au TOEFL:100/120 - TOEIC: 935/990"
-cv.languages << lang
-
-lang= CV::Language.new()
-lang.lang = "Allemand"
-lang.level = "Notions"
 cv.languages << lang
 
 

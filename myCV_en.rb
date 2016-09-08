@@ -17,6 +17,7 @@ cv.extras << "29/06/1986"
 #############
 # Exp Pro
 #############
+
 entry = CV::Entry.new()
 entry.date="April 2015!BR!upto Today"
 entry.title="Network solutions manager"
@@ -26,7 +27,8 @@ entry.details << "Conception of a 80Gb/s smartNIC product"
 entry.details << "Port and optimization of !B!OpenDataPlane!B! on MPPA."
 entry.details << "Management of a 5 engineer team"
 entry.details << "!B!High-speed PCI and Ethernet!B! interfaces support"
-entry.details << "Environment: MPPA, C, ODP, Ethernet, PCI."
+entry.details << "In charge of all Linux drivers: !B!PCI, netdev, AF ALG, crypto, RoCE, DPDK!B!"
+entry.details << "Environment: MPPA, C, ODP, Ethernet, PCI, !B!Linux Drivers!B!."
 cv.professional << entry
 
 entry = CV::Entry.new()
@@ -219,7 +221,7 @@ infoSkills << skill
 
 skill = CV::Skill.new()
 skill.type="Operating Systems"
-skill.content="!B!Kernel!B!, !B!Scheduling!B!, Programmation concurrentielle, !B!Drivers!B!, Signaux"
+skill.content="!B!Kernel!B!, Parallel programming, !B!Drivers!B!, Signals"
 infoSkills << skill
 
 skill = CV::Skill.new()
@@ -239,7 +241,7 @@ infoSkills << skill
 
 skill = CV::Skill.new()
 skill.type="Databases"
-skill.content="!B!SQL!B!, Oracle, MySQL, LDAP, !B!Conception!B!, Optimisation"
+skill.content="!B!SQL!B!, Oracle, MySQL, LDAP, !B!Design!B!, Optimisation"
 infoSkills << skill
 
 # skill = CV::Skill.new()
@@ -272,12 +274,6 @@ lang.lang = "English"
 lang.level = "Bilingual"
 lang.more = "TOEFL Score:100/120"
 cv.languages << lang
-
-lang= CV::Language.new()
-lang.lang = "German"
-lang.level = "School level"
-cv.languages << lang
-
 
 #############
 # Patents
