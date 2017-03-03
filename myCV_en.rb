@@ -9,7 +9,7 @@ cv.lastName="Morey-Chaisemartin"
 cv.title="Embedded Software Architect / Developer"
 cv.address="103 Rue du Mont Blanc"
 cv.city="74700 Sallanches"
-cv.mobile="+33 6 42 46 68 87"
+cv.mobile="+33 6 95 20 31 74"
 cv.email="nicolas@morey-chaisemartin.com"
 cv.homepage="nicolas.morey-chaisemartin.com"
 cv.extras << "29/06/1986"
@@ -44,7 +44,7 @@ cv.professional << entry
 
 entry = CV::Entry.new()
 entry.date="July 2009!BR!upto July 2013"
-entry.title="Embedded software architect and developper"
+entry.title="Embedded software architect and developer"
 entry.company="Kalray"
 entry.city="Montbonnot"
 entry.details << "Development of an embedded operating system and runtime libraries."
