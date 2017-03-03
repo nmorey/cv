@@ -19,7 +19,7 @@ cv.extras << "29/06/1986"
 #############
 
 entry = CV::Entry.new()
-entry.date="April 2015!BR!upto Today"
+entry.date="April 2015!BR!upto March 2017"
 entry.title="Network solutions manager"
 entry.company="Kalray"
 entry.city="Montbonnot"

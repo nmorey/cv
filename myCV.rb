@@ -18,7 +18,7 @@ cv.extras << "29/06/1986"
 # Exp Pro
 #############
 entry = CV::Entry.new()
-entry.date="Avril 2015!BR!à Aujourd'hui"
+entry.date="Avril 2015!BR!à Mars 2017"
 entry.title="Responsable solutions réseaux"
 entry.company="Kalray"
 entry.city="Montbonnot"
