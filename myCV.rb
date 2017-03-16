@@ -313,11 +313,11 @@ cv.header= "
 <td class='header-cell'><a href='index_en.html'><img  src='uk_flag.jpg' height='30' width='50' alt='EN'></a></td>
 <td class='header-cell'><a href='/photos/'>Photos</a></td>
 <td class='header-cell'><a href='https://github.com/nmorey/'>Mon GitHub</a></td>
-<td class='header-cell'><a href='/cellreport.pdf'>Cell Broadband Engine</a></td>
-<td class='header-cell'><a href='/Virt-K.pdf'>Virt-K: Kernel Temps Réel pour le Cell Broadband Engine</a></td></tr></table>"
+<td class='header-cell'><a href='cv-fr.pdf'> CV</a></td>
+</tr></table>"
 cv.middleStuff="
-                <a href=\"download.php?mirror=uk&id=cv-fr.pdf\"> CV PDF en Francais</a><br>
-                <a href=\"download.php?mirror=uk&id=cv-en.pdf\"> CV PDF en Anglais </a><br><br>
+                <a href=\"cv-fr.pdf\"> CV PDF en Francais</a><br>
+                <a href=\"cv-en.pdf\"> CV PDF en Anglais </a><br><br>
                 <a href=\"photos/\">Allez voir mes photos de vacances et randos!!</a><br>
 "
 cv.footer = "
