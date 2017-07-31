@@ -6,7 +6,7 @@ cv.language = :en
 
 cv.firstName="Nicolas"
 cv.lastName="Morey-Chaisemartin"
-cv.title="Embedded Software Architect / Developer"
+cv.title="Senior Linux Developeer"
 cv.address="103 Rue du Mont Blanc"
 cv.city="74700 Sallanches"
 cv.mobile="+33 6 95 20 31 74"
@@ -17,6 +17,18 @@ cv.extras << "29/06/1986"
 #############
 # Exp Pro
 #############
+
+entry = CV::Entry.new()
+entry.date="March 2017!BR!upto now"
+entry.title="Senior Linux Developer"
+entry.company="SUSE"
+entry.city="Home Office"
+entry.details << "Centralize, package and support !B!Infiniband!B! and !B!Omni-Path!B!"+
+                 " userspace tools and HPC libraries"
+entry.details << "Develop testsuites for Software/Hardware validation."
+entry.details << "Customer feature developments and support"
+entry.details << "Environment: RPM, OBS, Infiniband, Omni-Path, Networking, MPI."
+cv.professional << entry
 
 entry = CV::Entry.new()
 entry.date="April 2015!BR!upto March 2017"

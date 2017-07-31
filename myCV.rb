@@ -6,7 +6,7 @@ cv.language = :fr
 
 cv.firstName="Nicolas"
 cv.lastName="Morey-Chaisemartin"
-cv.title="Architecte / Développeur logiciel embarqué"
+cv.title="Développeur Linux Confirmé"
 cv.address="103 Rue du Mont Blanc"
 cv.city="74700 Sallanches"
 cv.mobile="+33 6 95 20 31 74"
@@ -17,6 +17,18 @@ cv.extras << "29/06/1986"
 #############
 # Exp Pro
 #############
+
+entry = CV::Entry.new()
+entry.date="March 2017!BR!upto now"
+entry.title="Développeur Linux Confirmé"
+entry.company="SUSE"
+entry.city="Home Office"
+entry.details << "Centralisation, packaging et support de librairies !B!Infiniband!B!, !B!Omni-Path!B! et HPC"
+entry.details << "Développement de tests pour valider l'ensemble Software/Hardware."
+entry.details << "Développement de features client, et support."
+entry.details << "Environnement: RPM, OBS, Infiniband, Omni-Path, Reseau, MPI."
+cv.professional << entry
+
 entry = CV::Entry.new()
 entry.date="Avril 2015!BR!à Mars 2017"
 entry.title="Responsable solutions réseaux"
