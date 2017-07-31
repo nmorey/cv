@@ -213,7 +213,7 @@ cv.personal << entry
 infoSkills=[]
 skill = CV::Skill.new()
 skill.type = "Languages"
-skill.content= "!B!C!B!, !B!Ruby!B!, Java, Assembleur, Ada, Php, C++"
+skill.content= "!B!C!B!, !B!Ruby!B!, Java, Assembleur, Ada, Php, C++, MPI"
 infoSkills << skill
 
 skill = CV::Skill.new()
@@ -233,12 +233,12 @@ infoSkills << skill
 
 skill = CV::Skill.new()
 skill.type="Operating Systems"
-skill.content="!B!Kernel!B!, Parallel programming, !B!Drivers!B!, Signals"
+skill.content="!B!Kernel!B!, Parallel programming, !B!Drivers!B!, Signals, RPM packaging"
 infoSkills << skill
 
 skill = CV::Skill.new()
 skill.type="Version control"
-skill.content="!B!Git!B!, !B!Gitolite!B!, !B!Hudson!B!, CVS, SVN, SCCS"
+skill.content="!B!Git!B!, !B!Gitolite!B!, !B!Jenkins!B!, OBS, CVS, SVN, SCCS"
 infoSkills << skill
 
 skill = CV::Skill.new()
@@ -248,7 +248,7 @@ infoSkills << skill
 
 skill = CV::Skill.new()
 skill.type="Networking"
-skill.content="Routage, Firewall, TCP/IP, Ethernet, !B!Sockets!B!, QoS, !B!Infiniband!B!, !B!ODP!B!"
+skill.content="Routage, TCP/IP, Ethernet, !B!Sockets!B!, QoS, !B!Infiniband!B!, !B!Omni-Path!B!, ODP"
 infoSkills << skill
 
 skill = CV::Skill.new()

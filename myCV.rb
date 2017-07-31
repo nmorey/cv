@@ -155,7 +155,7 @@ entry.company="Université de Northumbria"
 entry.city="Newcastle"
 entry.country="UK"
 entry.details << "En parallèle de la dernière année à l'ENSIMAG."
-entry.details << "Année réalisée à Newcastle - Angleterre."
+#entry.details << "Année réalisée à Newcastle - Angleterre."
 cv.degrees << entry
 
 #############
@@ -182,8 +182,8 @@ cv.personal << entry
 entry = CV::Entry.new()
 entry.date="2006"
 entry.title="Participation au concours IBM sur le Cell Broadband Engine"
-entry.details << "Développement d'un framework open-source pour les algorithmes de type"+
-    " !I!producteur/consommateur!I! sur un cluster de Cell."
+entry.details << "Développement d'un framework open-source pour des algorithmes parallèles"+
+    " sur un cluster de Cell."
 entry.details << "Environnement: C++, sockets."
 cv.personal << entry
 
@@ -213,7 +213,7 @@ cv.personal << entry
 infoSkills=[]
 skill = CV::Skill.new()
 skill.type = "Langages"
-skill.content= "!B!C!B!, !B!Ruby!B!, Java, Assembleur, Ada, Php, C++"
+skill.content= "!B!C!B!, !B!Ruby!B!, Java, Assembleur, Ada, Php, C++, MPI"
 infoSkills << skill
 
 skill = CV::Skill.new()
@@ -233,12 +233,12 @@ infoSkills << skill
 
 skill = CV::Skill.new()
 skill.type="Systèmes d'exploitation"
-skill.content="!B!Kernel!B!, Programmation concurrentielle, !B!Drivers!B!, Signaux"
+skill.content="!B!Kernel!B!, Programmation concurrentielle, !B!Drivers!B!, Signaux, Packaging RPM"
 infoSkills << skill
 
 skill = CV::Skill.new()
 skill.type="Gestionnaires de versions"
-skill.content="!B!Git!B!, !B!Gitolite!B!, !B!Hudson!B!, CVS, SVN, SCCS"
+skill.content="!B!Git!B!, !B!Gitolite!B!, !B!Jenkins!B!, OBS, CVS, SVN, SCCS"
 infoSkills << skill
 
 skill = CV::Skill.new()
@@ -248,7 +248,7 @@ infoSkills << skill
 
 skill = CV::Skill.new()
 skill.type="Réseau"
-skill.content="Routage, Firewall, TCP/IP, Ethernet, !B!Sockets!B!, QoS, !B!Infiniband!B!, !B!ODP!B!"
+skill.content="Routage, TCP/IP, Ethernet, !B!Sockets!B!, QoS, !B!Infiniband!B!, !B!Omni-Path!B!, ODP"
 infoSkills << skill
 
 skill = CV::Skill.new()
