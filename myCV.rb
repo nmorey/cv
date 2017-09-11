@@ -19,7 +19,7 @@ cv.extras << "29/06/1986"
 #############
 
 entry = CV::Entry.new()
-entry.date="March 2017!BR!upto now"
+entry.date="Mars 2017!BR!à Aujourd'hui"
 entry.title="Développeur Linux Confirmé"
 entry.company="SUSE"
 entry.city="Home Office"
