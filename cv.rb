@@ -94,14 +94,23 @@ module CV
             file.puts "\n\n\\section{#{CV::SKILLS[@language]}}" if @skills.length != 0  ||
                 @languages.length != 0
             @skills.each() {|skill_type, skill_list|
-                file.puts "\n\n\\subsection{#{@skill_type}}"
+
+                cat = skill_type
+                cols = @skills_cols
+                if skill_type.kind_of?(Hash) then
+                    cat = skill_type[:name]
+                    cols = skill_type[:cols] if skill_type[:cols].to_s() != ""
+                end
+
+                file.puts "\n\n\\subsection{#{CV::stringToTeX(cat)}}"
                 inLine = 0
-                case @skills_cols
+
+                case cols
                 when 1
                     skill_list.each(){|skill|
                         CV::HTMLputs(file, "\n\n\\cvline")
                         skill.toTeX(file)
-            }
+                    }
                 when 2
                     skill_list.each(){|skill|
                         CV::HTMLputs(file, "\n\n\\cvcomputer") if inLine == 0
@@ -298,7 +307,7 @@ module CV
         end
         def toTeX(file)
             file.printf "\\cventry{#{CV::stringToTeX(@date)}}"+
-                "{#{@title}}{#{@company}}{#{@city}}{#{@country}}{"
+                "{#{CV::stringToTeX(@title)}}{#{@company}}{#{@city}}{#{@country}}{"
             if @details.length > 0 then
                 file.puts "\\begin{itemize}"
                 @details.each() {|detail|
@@ -328,7 +337,7 @@ module CV
         def initialize()
         end
         def toTeX(file)
-            file.puts "{#{type}}{#{CV::stringToTeX(@content)}}"
+            file.puts "{#{CV::stringToTeX(@type)}}{#{CV::stringToTeX(@content)}}"
         end
         def toHTML(file)
             CV::HTMLputs(file, "<td class='skill-name'>#{@type}</td><td>#{@content}</td>")
