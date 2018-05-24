@@ -24,3 +24,4 @@ clean:
 
 install: cv-fr.pdf cv-en.pdf
 	scp cv-fr.pdf cv-en.pdf  index.html index_fr.html cv.css cv-pic.jpg www:www-nico/
+	rsync -aPh fuzzy_dir/ www:www-nico/
