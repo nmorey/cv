@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 require './cv'
+require './myCV_en'
 
 cv = CV::Top.new()    
 cv.language = :fr
@@ -332,137 +333,7 @@ cv.middleStuff="
                 <a href=\"cv-en.pdf\"> CV PDF en Anglais </a><br><br>
                 <a href=\"photos/\">Allez voir mes photos de vacances et randos!!</a><br>
 "
-cv.footer = "
-<script type=\"text/javascript\">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-21010187-1']);
-  _gaq.push(['_setDomainName', 'morey-chaisemartin.com']);
-  _gaq.push(['_setAllowLinker', true]);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-<div style=\"font-size:0px\">
-<a class=\"user_link\" href=\"/morey-chaisemartin\">Morey-Chaisemartin</a>
-<a class=\"user_link\" href=\"/morey-chaisemartin-cursus.html\">Morey-Chaisemartin Cursus</a>
-<a class=\"user_link\" href=\"/morey-chaisemartin-cv.html\">Morey-Chaisemartin CV</a>
-<a class=\"user_link\" href=\"/morey-chaisemartin-ensimag.html\">Morey-Chaisemartin ENSIMAG</a>
-<a class=\"user_link\" href=\"/morey-chaisemartin-etudiant.html\">Morey-Chaisemartin Etudiant</a>
-<a class=\"user_link\" href=\"/morey-chaisemartin-student.html\">Morey-Chaisemartin Student</a>
-<a class=\"user_link\" href=\"/nicolas-morey-chaisemartin.html\">Nicolas Morey-Chaisemartin</a>
-<a class=\"user_link\" href=\"/nicolas-morey-chaisemartin-cursus.html\">Nicolas Morey-Chaisemartin Cursus</a>
-<a class=\"user_link\" href=\"/nicolas-morey-chaisemartin-cv.html\">Nicolas Morey-Chaisemartin CV</a>
-<a class=\"user_link\" href=\"/nicolas-morey-chaisemartin-ensimag.html\">Nicolas Morey-Chaisemartin ENSIMAG</a>
-<a class=\"user_link\" href=\"/nicolas-morey-chaisemartin-etudiant.html\">Nicolas Morey-Chaisemartin Etudiant</a>
-<a class=\"user_link\" href=\"/nicolas-morey-chaisemartin-student.html\">Nicolas Morey-Chaisemartin Student</a>
-
-<a class=\"user_link\" href=\"embedded_systems.html\">Embedded Systems</a>
-<a class=\"user_link\" href=\"systemes_embarques.html\">Systemes Embarques</a>
-<a class=\"user_link\" href=\"real_time.html\">Real Time</a>
-<a class=\"user_link\" href=\"temps_reel.html\">Temps Reel</a>
-
-<a class=\"user_link\" href=\"c_developper.html\">C Developper</a>
-<a class=\"user_link\" href=\"java_developper.html\">Java Developper</a>
-<a class=\"user_link\" href=\"ada_developper.html\">Ada Developper</a>
-<a class=\"user_link\" href=\"tcl_developper.html\">TCL Developper</a>
-<a class=\"user_link\" href=\"assembler_developper.html\">Assembler Developper</a>
-<a class=\"user_link\" href=\"php_developper.html\">Php Developper</a>
-<a class=\"user_link\" href=\"c++_developper.html\">C++ Developper</a>
-<a class=\"user_link\" href=\"netbeans.html\">Netbeans</a>
-<a class=\"user_link\" href=\"netbeans_ide.html\">Netbeans IDE</a>
-<a class=\"user_link\" href=\"sqldevelopper.html\">SQLDevelopper</a>
-<a class=\"user_link\" href=\"glade.html\">Glade</a>
-<a class=\"user_link\" href=\"eclipse.html\">Eclipse</a>
-<a class=\"user_link\" href=\"emacs.html\">Emacs</a>
-<a class=\"user_link\" href=\"cvs.html\">CVS</a>
-<a class=\"user_link\" href=\"svn.html\">SVN</a>
-<a class=\"user_link\" href=\"sccs.html\">SCCS</a>
-<a class=\"user_link\" href=\"gtk_developper.html\">GTK Developper</a>
-<a class=\"user_link\" href=\"tk_developper.html\">Tk Developper</a>
-<a class=\"user_link\" href=\"swing_developper.html\">Swing Developper</a>
-<a class=\"user_link\" href=\"awt_developper.html\">AWT Developper</a>
-<a class=\"user_link\" href=\"Samba.html\">Samba</a>
-<a class=\"user_link\" href=\"postfix.html\">Postfix</a>
-<a class=\"user_link\" href=\"apache.html\">Apache</a>
-<a class=\"user_link\" href=\"bash.html\">Bash</a>
-<a class=\"user_link\" href=\"sed.html\">Sed</a>
-<a class=\"user_link\" href=\"awk.html\">Awk</a>
-<a class=\"user_link\" href=\"shell.html\">Shell</a>
-<a class=\"user_link\" href=\"sql.html\">SQL</a>
-<a class=\"user_link\" href=\"Oracle.html\">Oracle</a>
-<a class=\"user_link\" href=\"mysql.html\">mySQL</a>
-<a class=\"user_link\" href=\"ldap.html\">LDAP</a>
-<a class=\"user_link\" href=\"routing.html\">Routing</a>
-<a class=\"user_link\" href=\"firewall.html\">Firewall</a>
-<a class=\"user_link\" href=\"tcp_ip.html\">TCP/IP</a>
-<a class=\"user_link\" href=\"ethernet.html\">Ethernet</a>
-<a class=\"user_link\" href=\"sockets.html\">Sockets</a>
-<a class=\"user_link\" href=\"qos.html\">QoS</a>
-<a class=\"user_link\" href=\"kernel.html\">Kernel</a>
-<a class=\"user_link\" href=\"scheduling.html\">Scheduling</a>
-<a class=\"user_link\" href=\"drivers.html\">Drivers</a>
-<a class=\"user_link\" href=\"uml.html\">UML</a>
-<a class=\"user_link\" href=\"design_patterns.html\">Design Patterns</a>
-<a class=\"user_link\" href=\"vhdl.html\">VHDL</a>
-<a class=\"user_link\" href=\"xilinx.html\">Xilinx</a>
-<a class=\"user_link\" href=\"modelsim.html\">Modelsim</a>
-<a class=\"user_link\" href=\"mapple.html\">Mapple</a>
-<a class=\"user_link\" href=\"matlab.html\">Matlab</a>
-<a class=\"user_link\" href=\"scilab.html\">Scilab</a>
-<a class=\"user_link\" href=\"fpga.html\">FPGA</a>
-<a class=\"user_link\" href=\"compiler.html\">Compiler</a>
-<a class=\"user_link\" href=\"cell.html\">Cell</a>
-<a class=\"user_link\" href=\"cell_broadband_engine.html\">Cell Broadband Engine</a>
-<a class=\"user_link\" href=\"/sitemap.html\">Sitemap</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/apache.html\">apache</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/awk.html\">awk</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/bash.html\">bash</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/cell.html\">cell</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/compiler.html\">compiler</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/cv.html\">cv</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/cvs.html\">cvs</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/drivers.html\">drivers</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/eclipse.html\">eclipse</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/emacs.html\">emacs</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/ethernet.html\">ethernet</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/firewall.html\">firewall</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/fpga.html\">fpga</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/git.html\">git</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/glade.html\">glade</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/index.html\">index</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/kalray.html\">kalray</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/kernel.html\">kernel</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/ldap.html\">ldap</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/mapple.html\">mapple</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/matlab.html\">matlab</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/modelsim.html\">modelsim</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/mysql.html\">mysql</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/netbeans.html\">netbeans</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/Oracle.html\">Oracle</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/postfix.html\">postfix</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/qos.html\">qos</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/routing.html\">routing</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/Samba.html\">Samba</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/sccs.html\">sccs</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/scheduling.html\">scheduling</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/scilab.html\">scilab</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/sed.html\">sed</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/shell.html\">shell</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/sitemap.html\">sitemap</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/sockets.html\">sockets</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/sqldevelopper.html\">sqldevelopper</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/sql.html\">sql</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/svn.html\">svn</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/uml.html\">uml</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/vhdl.html\">vhdl</a>
-<a class=\"user_link\" href=\"http://nicolas.morey-chaisemartin.com/xilinx.html\">xilinx</a>"
-
+cv.footer = @EN_CV.footer
 
 #############
 # THE END
