@@ -71,7 +71,7 @@ module CV
 \\moderncvtheme[blue]{mycv}                
 \\usepackage[utf8]{inputenc}
 \\usepackage[scale=0.8]{geometry}
-
+\\usepackage{textcomp}
 "
             file.puts "\\firstname{#{@firstName}}" if @firstName != nil
             file.puts "\\familyname{#{@lastName}}" if @lastName != nil
