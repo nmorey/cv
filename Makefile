@@ -21,6 +21,7 @@ cv-en.tex: myCV_en.rb cv.rb
 
 clean:
 	rm -f cv-fr.pdf cv-en.pdf  *.toc *.aux *.bbl *.blg *.dvi *.log *.out cv-fr.tx cv-en.tex
+	rm -Rf fuzzy_dir/
 
 install: cv-fr.pdf cv-en.pdf
 	scp cv-fr.pdf cv-en.pdf  index.html index_fr.html cv.css cv-pic.jpg www:www-nico/
