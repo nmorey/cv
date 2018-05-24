@@ -28,6 +28,16 @@ module CV
         return coder.encode(str, :named)
     end
     module_function :stringToBasicHTML
+    def stringToText(str)
+        return nil if str == nil
+        return str.gsub(/!BR!/, "").gsub(/!B!.*!B!/) { |n|
+            n.gsub(/!B!/, "")
+        }.gsub(/!I!(.*)!I!/) { |n|
+            n.gsub(/!I!/, "")
+        }
+    end
+    module_function :stringToText
+
     def HTMLputs(file, str)
         str = str.gsub(/!BR!/, "<br />").gsub(/é/, "&eacute;").gsub(/è/, "&egrave;").gsub(/à/, "&agrave;").gsub(/!B!.*!B!/) { |n|
             "<b>" + n.gsub(/!B!/, "") +"</b>"
