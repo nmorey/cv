@@ -14,12 +14,13 @@ module CV
 
     def stringToTeX(str)
         return nil if str == nil
-        return str.gsub(/!BR!/, "\\\\\\").gsub(/&/, '\\\&').gsub(/!B!.*!B!/) { |n|
+        return str.gsub(/!BR!/, "\\\\\\").gsub(/&/, '\\\&').gsub(/€/, '\\texteuro').gsub(/!B!.*!B!/) { |n|
             "\\textbf{" + n.gsub(/!B!/, "") +"}"
             }.gsub(/!I!(.*)!I!/) { |n|
             "$" + n.gsub(/!I!/, "") +"$"
             }
     end
+
     module_function :stringToTeX
     def stringToBasicHTML(str)
         return nil if str == nil
