@@ -12,7 +12,7 @@ all: cv-fr.pdf cv-en.pdf
 %.pdf: %.tex
 	rubber -m pdftex $<
 
-cv-fr.tex: myCV.rb cv.rb
+cv-fr.tex: myCV.rb cv.rb myCV_en.rb
 	ruby $<
 
 cv-en.tex: myCV_en.rb cv.rb
