@@ -243,7 +243,7 @@ infoSkills << skill
 
 skill = CV::Skill.new()
 skill.type="Administration Système"
-skill.content="!B!Linux!B!, FreeBSD, Samba, Postfix, Apache, Shell scripting (Bash, Sed, Awk)"
+skill.content="!B!Linux!B!, FreeBSD, Samba, Postfix, Apache, Shell scripting, Bash, Sed, Awk"
 infoSkills << skill
 
 skill = CV::Skill.new()
