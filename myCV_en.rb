@@ -6,7 +6,7 @@ cv.language = :en
 
 cv.firstName="Nicolas"
 cv.lastName="Morey-Chaisemartin"
-cv.title="Senior Linux Developeer"
+cv.title="Senior Linux Developper"
 cv.address="103 Rue du Mont Blanc"
 cv.city="74700 Sallanches"
 cv.mobile="+33 6 95 20 31 74"
@@ -243,7 +243,7 @@ infoSkills << skill
 
 skill = CV::Skill.new()
 skill.type="System Administration"
-skill.content="!B!Linux!B!, FreeBSD, Samba, Postfix, Apache, Shell scripting (Bash, Sed, Awk)"
+skill.content="!B!Linux!B!, FreeBSD, Samba, Postfix, Apache, Shell scripting, Bash, Sed, Awk"
 infoSkills << skill
 
 skill = CV::Skill.new()
