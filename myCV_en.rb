@@ -213,7 +213,7 @@ cv.personal << entry
 infoSkills=[]
 skill = CV::Skill.new()
 skill.type = "Languages"
-skill.content= "!B!C!B!, !B!Ruby!B!, Java, Assembleur, Ada, Php, C++, MPI"
+skill.content= "!B!C!B!, !B!Ruby!B!, Java, Assembly, Ada, Php, C++, MPI"
 infoSkills << skill
 
 skill = CV::Skill.new()
