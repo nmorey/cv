@@ -284,6 +284,82 @@ module CV
             CV::HTMLputs(file,"</table>#{@footer}</body>")
             file.close()
         end
+
+        def keywords()
+            @skills.map() {|skill_type, skill_list|
+                skill_list.map() {|skill|
+                    skill.content.split(",").map(){|unique_skill|
+                        CV::stringToText(unique_skill).strip().gsub(/\s+/, "-").gsub('/', "-").downcase
+                    }
+                }
+            }.flatten().uniq() + [ "cv", "cursus" ]
+        end
+        def categories()
+             categories = [
+                @firstName.downcase() + "-" + @lastName.downcase(),
+                @lastName.downcase(),
+                @title.downcase().gsub(/\s+/, "-"),
+            ]
+            categories += (professional.map(){|entry| entry.company.gsub(/\s+/, "-").downcase() } +
+              degrees.map(){|entry| entry.company.gsub(/\s+/, "-").downcase() }).uniq()
+            return categories
+        end
+
+        def fuzzy_block(categories, keywords, max_depth, prefix="", depth=0, used_keywords=[], &block)
+            keywords.each(){|keyword|
+                next if used_keywords.index(keyword) != nil
+                yield(prefix, keyword)
+            }
+            if depth < max_depth then
+                (categories + keywords).each(){|sub_cat|
+                    next if used_keywords.index(sub_cat) != nil
+                    fuzzy_block(categories, keywords, max_depth,
+                                  prefix + "/" + sub_cat,
+                                  depth + 1, used_keywords + [sub_cat], &block)
+                }
+            end
+        end
+        def fuzzy(fuzzy_dir, target, url, max_depth)
+            keywords=keywords()
+            categories = categories()
+
+            `rm -Rf #{fuzzy_dir}; mkdir #{fuzzy_dir}`
+
+            here = Dir.pwd()
+
+            Dir.chdir(fuzzy_dir)
+            categories.each(){|cat|
+                `ln -s . #{cat}`
+            }
+            keywords.each(){|keyword|
+                `ln -s . #{keyword}`
+                `ln -s #{target} #{keyword}.html`
+            }
+            xml_handle = File.open("sitemap.xml", "w+")
+            html_handle = File.open("sitemap.html", "w+")
+            d = Time.new()
+
+            xml_handle.puts('<?xml version="1.0" encoding="UTF-8"?>')
+            xml_handle.puts('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+
+            html_handle.puts("<html><head><title>Sitemap</title></head><body>")
+            fuzzy_block(categories, keywords, max_depth) {|prefix, keyword|
+                xml_handle.puts("<url>")
+                xml_handle.puts("\t<loc>" + url + prefix + "/" + keyword + ".html</loc>")
+                xml_handle.puts("\t<lastmod>" + d.strftime("%Y-%m-%d") + "</lastmod>")
+                xml_handle.puts("</url>")
+
+                html_handle.puts("<a href=\"" + url + prefix + "/" + keyword + ".html\">" +
+                                 (prefix.gsub(/[-\/]/, " ") + " " + keyword).strip() + "</a><br />")
+            }
+            xml_handle.puts('</urlset">')
+            xml_handle.close()
+
+            html_handle.puts("</body></html>")
+            html_handle.close()
+
+            Dir.chdir(here)
+        end
     end
 
     class Language
