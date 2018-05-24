@@ -364,6 +364,7 @@ cv.fuzzy_block(cv.categories(), cv.keywords(), 1) {|prefix, keyword|
 #############
 # THE END
 #############
+@EN_CV = cv
 
 cv.fuzzy("fuzzy_dir", "index.html", "https://nicolas.morey-chaisemartin.com", 1)
 cv.toTeX('cv-en.tex')

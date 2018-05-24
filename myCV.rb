@@ -468,6 +468,8 @@ cv.footer = "
 # THE END
 #############
 
+@FR_CV = cv
+
 cv.toTeX('cv-fr.tex')
 cv.toHTML('index_fr.html')
 
