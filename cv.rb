@@ -352,7 +352,7 @@ module CV
                 html_handle.puts("<a href=\"" + url + prefix + "/" + keyword + ".html\">" +
                                  (prefix.gsub(/[-\/]/, " ") + " " + keyword).strip() + "</a><br />")
             }
-            xml_handle.puts('</urlset">')
+            xml_handle.puts('</urlset>')
             xml_handle.close()
 
             html_handle.puts("</body></html>")

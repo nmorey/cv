@@ -7,8 +7,8 @@ cv.language = :en
 cv.firstName="Nicolas"
 cv.lastName="Morey-Chaisemartin"
 cv.title="Senior Linux Developper"
-cv.address="103 Rue du Mont Blanc"
-cv.city="74700 Sallanches"
+cv.address="36 Impasse de la Terrasse"
+cv.city="74190 Passy"
 cv.mobile="+33 6 95 20 31 74"
 cv.email="nicolas@morey-chaisemartin.com"
 cv.homepage="nicolas.morey-chaisemartin.com"
@@ -25,9 +25,10 @@ entry.company="SUSE"
 entry.city="Home Office"
 entry.details << "Centralize, package and support !B!Infiniband!B! and !B!Omni-Path!B!"+
                  " userspace tools and HPC libraries"
+entry.details << "Develop and support RDMA !B!Kernel!B! modules"
 entry.details << "Develop testsuites for Software/Hardware validation."
 entry.details << "Customer feature developments and support"
-entry.details << "Environment: RPM, OBS, Infiniband, Omni-Path, Networking, MPI."
+entry.details << "Environment: RPM, OBS, Infiniband, Omni-Path, Networking, MPI, !B!Kernel!B!."
 cv.professional << entry
 
 entry = CV::Entry.new()
@@ -118,14 +119,14 @@ entry.details << "Porting of an objective-C crystallography demonstration applic
 entry.details << "Environment: Java, Swing, HTML."
 cv.professional << entry
 
-entry = CV::Entry.new()
-entry.date="August 2003"
-entry.title="Intern"
-entry.company="Xyalis"
-entry.city="Grenoble"
-entry.details << "Development of !B!non-regression tools!B! for Xyalis complete software suite."
-entry.details << "Environment: Bash, Tcl, Tk."
-cv.professional << entry
+#entry = CV::Entry.new()
+#entry.date="August 2003"
+#entry.title="Intern"
+#entry.company="Xyalis"
+#entry.city="Grenoble"
+#entry.details << "Development of !B!non-regression tools!B! for Xyalis complete software suite."
+#entry.details << "Environment: Bash, Tcl, Tk."
+#cv.professional << entry
 
 # entry = CV::Entry.new()
 # entry.date="July 2001"
@@ -169,6 +170,7 @@ entry = CV::Entry.new()
 entry.date="2008!BR!upto Today"
 entry.title="Contributions to Open Source projects"
 entry.details << "Contribution to mailing list and development of !B!Linux!B!, !B!Git!B!, OpenSM, ODP."
+entry.details << "!B!Maintainer!B! for rdma-core stable releases"
 entry.details << "Occasional involvement in various projects: Sick-Beard, RBTools, libdbi..."
 cv.personal << entry
 
