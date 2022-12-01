@@ -68,16 +68,15 @@ module CV
         def toTeX(filename)
             file = File.open(filename, "w")
             file.puts "\\documentclass[10pt,a4paper]{moderncv}
-\\moderncvtheme[blue]{mycv}                
-\\usepackage[utf8]{inputenc}
+\\moderncvstyle{classic}
+\\moderncvcolor{blue}
+\\moderncvicons{awesome}
 \\usepackage[scale=0.8]{geometry}
-\\usepackage{textcomp}
 "
-            file.puts "\\firstname{#{@firstName}}" if @firstName != nil
-            file.puts "\\familyname{#{@lastName}}" if @lastName != nil
+            file.puts "\\name{#{@firstName.to_s()}}{#{@lastName.to_s()}}"
             file.puts "\\title{#{CV::stringToTeX(@title).gsub('\\\\', ' ')}}" if @title != nil
             file.puts "\\address{#{@address}}{#{@city}}" if @address != nil || @city != nil
-            file.puts "\\mobile{#{@mobile}}" if @mobile != nil
+            file.puts "\\phone[mobile]{#{@mobile}}" if @mobile != nil
             file.puts "\\email{#{@email}}" if @email != nil
             file.puts "\\homepage{#{@homepage}}" if @homepage != nil
             @extras.each() {|extra|
