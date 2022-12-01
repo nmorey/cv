@@ -5,7 +5,7 @@ cv = CV::Top.new()
 cv.language = :en
 
 cv.firstName="Nicolas"
-cv.lastName="Morey-Chaisemartin"
+cv.lastName="Morey"
 cv.title="Senior Linux Developper"
 #cv.address=
 cv.city="74190 Passy"

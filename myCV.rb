@@ -6,7 +6,7 @@ cv = CV::Top.new()
 cv.language = :fr
 
 cv.firstName="Nicolas"
-cv.lastName="Morey-Chaisemartin"
+cv.lastName="Morey"
 cv.title="Développeur Linux Confirmé"
 #cv.address=
 cv.city="74190 Passy"
@@ -98,7 +98,7 @@ entry.company="Allibert-Trekking"
 entry.city="Montmélian"
 entry.details << "Support utilisateur et serveur sur un réseau Mac OS X."
 entry.details << "Mise en place d'un !B!système de monitoring!B!."
-entry.details << "Développement d'outils de synchronisation entres les outils d'inventaire, de monitoring et d'administration."
+entry.details << "Développement d'outils de synchronisation entres l'inventaire, le monitoring et l'administration."
 entry.details << "Environnement: Mac OS X, Php, Perl, Python, Bash, MySQL, openDirectory."
 cv.professional << entry
 
