@@ -20,7 +20,7 @@ cv-en.tex: myCV_en.rb cv.rb
 
 
 clean:
-	rm -f cv-fr.pdf cv-en.pdf  *.toc *.aux *.bbl *.blg *.dvi *.log *.out cv-fr.tx cv-en.tex
+	rm -f cv-fr.pdf cv-en.pdf  *.toc *.aux *.bbl *.blg *.dvi *.log *.out *.rubbercache cv-fr.tex cv-en.tex
 	rm -Rf fuzzy_dir/
 
 install: cv-fr.pdf cv-en.pdf
